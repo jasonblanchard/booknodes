@@ -7,7 +7,7 @@ class Idea
   embedded_in :book_event
 
   def list_nodes
-    nodes.join(', ')
+    nodes.join(', ') unless nodes.nil?
   end
 
 end

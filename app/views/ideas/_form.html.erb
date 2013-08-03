@@ -1,0 +1,5 @@
+<%= form_for([@event, @event.ideas.new], :remote => true) do |f| %>
+  <%= f.text_area :note %>
+  <%= f.submit %>
+
+<% end %>
