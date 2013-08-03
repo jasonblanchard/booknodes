@@ -4,15 +4,13 @@
 
 <% content_for :sidebar do %>
   <div class='idea-list'>
-    <div>
-      <%= link_to 'All', book_event_path(@event) %>
-    </div>
+    <%= link_to content_tag(:div, 'All', :class => 'idea-node'), book_event_path(@event) %>
 
     <% @idea_list.each do |idea,number| %>
-      <div>
-        <%= link_to "#{idea}: #{number}", book_event_path(@event, :node => idea)  %>
-        </div>
-      <% end %>
+
+      <%= link_to content_tag(:div, "#{idea}: #{number}", :class => 'idea-node'), book_event_path(@event, :node => idea)  %>
+
+    <% end %>
   </div>
 <% end %>
 

@@ -46,5 +46,15 @@ body {
 }
 
 .idea-list {
-  padding: 5px;
+
+  .idea-node {
+    height: 30px;
+    border-bottom: 1px solid $gray-border;
+    padding-top: 5px;
+
+    &:hover {
+      background: $light-gray;
+    }
+  }
 }
+
