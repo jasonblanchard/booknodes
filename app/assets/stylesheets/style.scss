@@ -6,11 +6,19 @@ body {
   background: #efefef;
 }
 
+.content {
+  margin-left: 240px;
+}
+
 .sidebar {
   background: #cccccc;
-  border: 1px solid #AAAAAA;
+  border-right: 1px solid #AAAAAA;
+  float: left;
+  width: 240px;
+  position: fixed;
 }
 
 .notes, .sidebar {
   height: 100%;
 }
+

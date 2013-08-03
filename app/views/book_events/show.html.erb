@@ -1,11 +1,14 @@
-<div class='row full-height'>
+<div class='full-height'>
 
-  <div class='large-9 push-3 columns notes full-height'>
+  <% content_for :sidebar do %>
+    <div>
+      <%= @event.title %>
+    </div>
+  <% end %>
+
+  
+  <div>
     Notes listed in here
-  </div>
-
-  <div class='large-3 pull-9 columns sidebar full-height'>
-    <%= @event.title %>
   </div>
 
 </div>
