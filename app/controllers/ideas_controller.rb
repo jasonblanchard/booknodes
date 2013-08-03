@@ -17,6 +17,23 @@ class IdeasController < ApplicationController
     @idea.save
   end
 
+  def update
+    @event = BookEvent.find(params[:book_event_id])
+    @idea = @event.ideas.find(params[:id])
+
+    @idea.update_attributes(idea_params)
+    
+  end
+
+  def destroy
+    @event = BookEvent.find(params[:book_event_id])
+    @idea = @event.ideas.find(params[:id])
+
+    @idea.destroy
+
+    redirect_to @event
+  end
+
   private
 
   def idea_params

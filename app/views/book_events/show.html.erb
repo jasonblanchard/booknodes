@@ -32,7 +32,10 @@
 
 <div class='ideas'>
   <%= div_for(@ideas) do |idea| %>
-    <p><%= simple_format idea.note %></p>
-    <div class='node-list'><%= idea.list_nodes %></div>
+    <div class='idea-content show'
+      <p><%= simple_format idea.note %></p>
+      <div class='node-list'><%= idea.list_nodes %></div>
+    </div>
+    <%= render :partial => "ideas/inline_form", :locals => {idea: idea} %>
   <% end %>
 </div>
