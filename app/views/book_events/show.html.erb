@@ -3,10 +3,14 @@
 <% end %>
 
 <% content_for :sidebar do %>
-  <div>
-    <% @idea_list.each do |k,v| %>
+  <div class='idea-list'>
+    <div>
+      <%= link_to 'All', book_event_path(@event) %>
+    </div>
+
+    <% @idea_list.each do |idea,number| %>
       <div>
-        <%= k %>: <%= v %>
+        <%= link_to "#{idea}: #{number}", book_event_path(@event, :node => idea)  %>
         </div>
       <% end %>
   </div>
@@ -14,7 +18,7 @@
 
 
 <div class='ideas'>
-  <%= div_for(@ideas.order_by(:created_at => :desc)) do |idea| %>
+  <%= div_for(@ideas) do |idea| %>
     <p><%= idea.note %></p>
     <div class='node-list'><%= idea.list_nodes %></div>
   <% end %>
