@@ -1,5 +1,6 @@
 class Idea
   include Mongoid::Document
+  include Mongoid::Timestamps
   
   field :note
   field :nodes, type: Array

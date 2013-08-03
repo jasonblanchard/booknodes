@@ -5,6 +5,7 @@ class BookEventsController < ApplicationController
 
   def show
     @event = BookEvent.find(params[:id])
+    @ideas = @event.ideas
   end
 
 end

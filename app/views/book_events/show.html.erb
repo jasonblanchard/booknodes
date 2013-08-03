@@ -10,7 +10,7 @@
 
 
 <div class='ideas'>
-  <%= div_for(@event.ideas) do |idea| %>
+  <%= div_for(@ideas.order_by(:created_at => :desc)) do |idea| %>
     <p><%= idea.note %></p>
     <div class='node-list'><%= idea.list_nodes %></div>
   <% end %>
