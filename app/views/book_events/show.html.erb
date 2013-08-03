@@ -4,7 +4,11 @@
 
 <% content_for :sidebar do %>
   <div>
-    sidebar stuff here
+    <% @idea_list.each do |k,v| %>
+      <div>
+        <%= k %>: <%= v %>
+        </div>
+      <% end %>
   </div>
 <% end %>
 
