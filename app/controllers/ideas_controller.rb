@@ -23,6 +23,10 @@ class IdeasController < ApplicationController
 
     @idea.update_attributes(idea_params)
     
+    # TODO: This is making two UPDATE calls. Figure out how to do this better
+    @idea.nodes = @idea.nodes.split(',').map { |v| v.strip }
+    @idea.save
+    
   end
 
   def destroy
