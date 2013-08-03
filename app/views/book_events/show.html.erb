@@ -12,5 +12,6 @@
 <div class='ideas'>
   <%= div_for(@event.ideas) do |idea| %>
     <p><%= idea.note %></p>
+    <div class='node-list'><%= idea.list_nodes %></div>
   <% end %>
 </div>

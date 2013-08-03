@@ -9,6 +9,7 @@ html, body, .main, .full-height {
 
 body {
   background: $light-gray;
+  color: rgb(65, 65, 65);
 }
 
 .topbar {
@@ -40,3 +41,6 @@ body {
   border-bottom: 1px solid $light-gray-border;
 }
 
+.node-list {
+  font-size: .9em;
+}

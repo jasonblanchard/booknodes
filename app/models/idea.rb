@@ -5,4 +5,8 @@ class Idea
   field :nodes, type: Array
   embedded_in :book_event
 
+  def list_nodes
+    nodes.join(', ')
+  end
+
 end
