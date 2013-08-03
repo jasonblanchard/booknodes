@@ -1,1 +1,3 @@
-home
+<%= div_for @events do |event| %>
+  <%= link_to event.title, event  %>
+<% end %>
