@@ -12,6 +12,8 @@ class IdeasController < ApplicationController
     @event = BookEvent.find(params[:book_event_id])
     @idea = @event.ideas.new(idea_params)
 
+    @idea.nodes = @idea.nodes.split(',').map { |v| v.strip }
+
     @idea.save
   end
 
