@@ -1,4 +1,8 @@
 class IdeasController < ApplicationController
+
+  def show
+    @idea = Idea.find(params[:id])
+  end
   
   def new
     @event = BookEvent.find(params[:book_event_id])

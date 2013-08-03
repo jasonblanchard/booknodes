@@ -1,0 +1,3 @@
+$('.ideas').prepend("<div class='idea'><%= escape_javascript( render(@idea)) %></div>");
+$('#new_idea')[0].reset();
+$('.new-idea-form').slideToggle('fast');
