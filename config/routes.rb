@@ -4,6 +4,8 @@ Booknotes::Application.routes.draw do
 
   resources :book_events
 
+  get '/book_events/:id/:node' => 'book_events#show', :as => :idea_filter
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
