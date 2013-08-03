@@ -95,7 +95,7 @@
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-// $h1-font-size: emCalc(44px);
+$h1-font-size: emCalc(25px);
 // $h2-font-size: emCalc(37px);
 // $h3-font-size: emCalc(27px);
 // $h4-font-size: emCalc(23px);
@@ -106,8 +106,8 @@
 // $subheader-line-height: 1.4;
 // $subheader-font-color: lighten($header-font-color, 30%);
 // $subheader-font-weight: 300;
-// $subheader-top-margin: .2em;
-// $subheader-bottom-margin: .5em;
+$subheader-top-margin: 0em;
+$subheader-bottom-margin: 0em;
 
 // A general <small> styling
 // $small-font-size: 60%;

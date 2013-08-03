@@ -3,5 +3,6 @@ class BookEvent
   include Mongoid::Timestamps
 
   field :title
+  embeds_many :ideas
 
 end

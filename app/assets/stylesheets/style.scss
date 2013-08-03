@@ -1,9 +1,22 @@
+$dark-gray: #cccccc;
+$light-gray: #efefef;
+$gray-border: #AAAAAA;
+$light-gray-border: #CCCCCC;
+
 html, body, .main, .full-height {
   height: 100%;
 }
 
 body {
-  background: #efefef;
+  background: $light-gray;
+}
+
+.topbar {
+  height: 40px;
+  border-bottom: 1px solid $gray-border;
+  /* position: fixed; */
+  width: 100%;
+  padding-left: 5px;
 }
 
 .content {
@@ -11,14 +24,19 @@ body {
 }
 
 .sidebar {
-  background: #cccccc;
-  border-right: 1px solid #AAAAAA;
+  background: $dark-gray;
+  border-right: 1px solid $gray-border;
   float: left;
   width: 240px;
   position: fixed;
 }
 
-.notes, .sidebar {
+.ideas, .sidebar {
   height: 100%;
+}
+
+.idea {
+  padding: 5px;
+  border-bottom: 1px solid $light-gray-border;
 }
 

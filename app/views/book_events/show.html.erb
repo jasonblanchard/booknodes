@@ -1,14 +1,16 @@
-<div class='full-height'>
+<% content_for :topbar do %>
+  <h1 class='subheader'><%= @event.title %></h1>
+<% end %>
 
-  <% content_for :sidebar do %>
-    <div>
-      <%= @event.title %>
-    </div>
-  <% end %>
-
-  
+<% content_for :sidebar do %>
   <div>
-    Notes listed in here
+    sidebar stuff here
   </div>
+<% end %>
 
+
+<div class='ideas'>
+  <%= div_for(@event.ideas) do |idea| %>
+    <p><%= idea.note %></p>
+  <% end %>
 </div>
