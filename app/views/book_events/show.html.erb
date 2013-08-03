@@ -1,8 +1,17 @@
-<% content_for :head do %>
+<% content_for :scripts do %>
+  <script>
+    $(document).on('click', 'a.new-idea', function() {
+      $('.new-idea-form').slideToggle('fast');
+      return false;
+    });
+
+  </script>
+
 <% end %>
 
 <% content_for :topbar do %>
-  <h1 class='subheader'><%= @event.title %></h1>
+  <h1 class='subheader event-title'><%= @event.title %></h1>
+  <%= link_to 'New Idea', '#', :class => 'new-idea' %>
 <% end %>
 
 <% content_for :sidebar do %>
@@ -17,6 +26,9 @@
   </div>
 <% end %>
 
+<div class='new-idea-form'>
+  form in here
+</div>
 
 <div class='ideas'>
   <%= div_for(@ideas) do |idea| %>

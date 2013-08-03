@@ -2,7 +2,9 @@ Booknotes::Application.routes.draw do
   devise_for :users
   root :to => 'home#index'
 
-  resources :book_events
+  resources :book_events do
+    resources :ideas
+  end
 
   get '/book_events/:id/:node' => 'book_events#show', :as => :idea_filter
 
