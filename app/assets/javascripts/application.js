@@ -19,12 +19,12 @@
 
 $(document).foundation();
 
-$(document).on('click', 'a.new-idea', function() {
+$(document).on('click.ideaEvents', 'a.new-idea', function() {
   $('.new-idea-form').slideToggle('fast');
   return false;
 });
 
-$(document).on('click', 'a.expand-sidebar-button', function() {
+$(document).on('click.ideaEvents', 'a.expand-sidebar-button', function() {
   $('.mobile.sidebar').toggle("slide", { direction: "left" }, 'fast');
   return false;
 });

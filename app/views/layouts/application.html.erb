@@ -18,6 +18,8 @@
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application" %>
+    <%= yield :scripts %>
   </head>
 
   <body>
@@ -36,8 +38,5 @@
       <%= content_for?(:main_content) ? yield(:main_content) : yield %>
     </div>
 
-    
-    <%= javascript_include_tag "application" %>
-    <%= yield :scripts %>
   </body>
 </html>
