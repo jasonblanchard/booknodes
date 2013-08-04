@@ -25,6 +25,6 @@ $(document).on('click', 'a.new-idea', function() {
 });
 
 $(document).on('click', 'a.expand-sidebar-button', function() {
-  $('.sidebar').toggle("slide", { direction: "left" }, 'fast');
+  $('.mobile.sidebar').toggle("slide", { direction: "left" }, 'fast');
   return false;
 });
