@@ -52,6 +52,14 @@ body {
     box-shadow: 0 0 10px #BEBEBE;
     border-bottom: none;
   }
+
+  .row {
+    max-width: 100%;
+  }
+
+  .columns {
+    padding-left: 0px;
+  }
 }
 
 .idea-content {
@@ -66,6 +74,10 @@ body {
 .node-list, .page-number {
   font-size: $small-text-size;
   color: $light-text-color;
+}
+
+.page-number {
+  text-align: right;
 }
 
 
