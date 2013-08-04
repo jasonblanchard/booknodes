@@ -27,6 +27,10 @@ body {
   clear: both;
 }
 
+.row {
+  z-index: -999
+}
+
 .topbar {
   height: 40px;
   border-bottom: 1px solid $gray-border;
