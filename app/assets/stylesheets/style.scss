@@ -73,3 +73,14 @@ body {
   display: none;
 }
 
+.ideas form {
+  display: none;
+}
+
+.idea.editing .show {
+  display: none;
+}
+
+.idea.editing form {
+  display: block;
+}
