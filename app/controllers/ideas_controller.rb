@@ -33,7 +33,13 @@ class IdeasController < ApplicationController
     
     # TODO: This is making two UPDATE calls. Figure out how to do this better
     @idea.nodes = @idea.nodes.split(',').map { |v| v.strip }
-    @idea.save
+
+    if @idea.save
+      respond_to do |format|
+        format.html { render :nothing => true }
+        format.js
+      end
+    end
     
   end
 

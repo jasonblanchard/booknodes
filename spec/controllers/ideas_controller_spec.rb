@@ -29,5 +29,30 @@ describe IdeasController do
 
   end
 
+  describe 'update' do
+
+    before :each do
+      @idea = @event.ideas.create(:note => "Cats are great", :nodes => 'cats beards')
+    end
+
+    it 'should assign values' do
+      
+      put :update, :idea => {'note' => 'Cats are wonderful', :nodes => 'cats, bears' }, :book_event_id => @event.id, :id => @idea.id
+
+      assigns[:event].id.should eq(@event.id)
+      assigns[:idea].id.should eq(@idea.id)
+    end
+
+    it 'should update the values' do
+      put :update, 'idea' => {'note' => 'Cats are wonderful', 'nodes' => 'cats, bears' }, 'book_event_id' => @event.id, 'id'=> @idea.id
+
+      idea = @event.ideas.find(@idea.id)
+
+      assigns[:idea].note.should eq 'Cats are wonderful'
+      assigns[:idea].nodes.should eq ['cats','bears']
+    end
+
+  end
+
 
 end
