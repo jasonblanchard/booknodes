@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.ui.effect.all
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
@@ -23,3 +24,7 @@ $(document).on('click', 'a.new-idea', function() {
   return false;
 });
 
+$(document).on('click', 'a.expand-sidebar-button', function() {
+  $('.sidebar').toggle("slide", { direction: "left" }, 'fast');
+  return false;
+});

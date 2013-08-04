@@ -22,11 +22,14 @@
 <% end %>
 
 <% content_for :topbar do %>
+  <a href='#' class='expand-sidebar-button'>>></a>
   <h1 class='subheader event-title'><%= @event.title %></h1>
   <%= link_to 'New Idea', '#', :class => 'new-idea' %>
 <% end %>
 
 <% content_for :sidebar do %>
+  <div><a href='#' class='expand-sidebar-button'><<</a></div>
+  <div class='clearfix'></div>
   <div class='idea-list'>
     <%= link_to content_tag(:div, 'All', :class => 'idea-node'), book_event_path(@event) %>
 

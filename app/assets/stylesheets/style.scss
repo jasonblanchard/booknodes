@@ -14,6 +14,10 @@ body {
   color: $text-color;
 }
 
+.clearfix {
+  clear: both;
+}
+
 .topbar {
   height: 40px;
   border-bottom: 1px solid $gray-border;
@@ -82,7 +86,7 @@ body {
 }
 
 .subheader.event-title {
-  width: 80%;
+  width: 50%;
   float: left;
 }
 
@@ -107,4 +111,3 @@ body {
 .idea.editing form {
   display: block;
 }
-
