@@ -4,9 +4,11 @@ $gray-border: #AAAAAA;
 $light-gray-border: #CCCCCC;
 $text-color: rgb(65, 65, 65);
 $light-text-color: rgb(114, 114, 114);
+$small-text-size: .9em;
 
 html, body, .main, .full-height {
   height: 100%;
+  font-size: 14px;
 }
 
 body {
@@ -61,13 +63,13 @@ body {
 }
 
 
-.node-list {
-  font-size: .8em;
+.node-list, .page-number {
+  font-size: $small-text-size;
   color: $light-text-color;
 }
 
+
 .idea-list {
-  font-size: .9em;
 
   .idea-node {
     height: 30px;
