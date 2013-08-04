@@ -47,11 +47,7 @@
 </div>
 
 <div class='ideas'>
-  <%= div_for(@ideas) do |idea| %>
-    <a class='idea-content show' href='#'>
-      <p><%= simple_format idea.note %></p>
-      <div class='node-list'><%= idea.list_nodes %></div>
-    </a>
-    <%= render :partial => "ideas/inline_form", :locals => {idea: idea} %>
+  <% @ideas.each do |idea| %>
+    <%= render :partial => "ideas/idea", :locals => { idea: idea } %>
   <% end %>
 </div>
