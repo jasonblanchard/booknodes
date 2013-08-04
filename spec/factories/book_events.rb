@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :book_event do
+    title "Great book"
+    user
   end
 end

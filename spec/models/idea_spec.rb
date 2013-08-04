@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe Idea do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'can be created' do
+    idea = FactoryGirl.create(:idea)
+
+    idea.should be_a(Idea)
+  end
 end
