@@ -3,6 +3,7 @@ $light-gray: #efefef;
 $gray-border: #AAAAAA;
 $light-gray-border: #CCCCCC;
 $text-color: rgb(65, 65, 65);
+$light-text-color: rgb(114, 114, 114);
 
 html, body, .main, .full-height {
   height: 100%;
@@ -47,20 +48,36 @@ body {
   }
 }
 
+.idea-content {
+  color: $text-color;
+
+  &:hover {
+    color: $text-color;
+  }
+}
+
+
 .node-list {
-  font-size: .9em;
+  font-size: .8em;
+  color: $light-text-color;
 }
 
 .idea-list {
+  font-size: .9em;
 
   .idea-node {
     height: 30px;
     border-bottom: 1px solid $gray-border;
-    padding-top: 5px;
+    padding-top: 7px;
+    padding-left: 5px;
 
     &:hover {
       background: $light-gray;
     }
+  }
+
+  a {
+    color: $text-color;
   }
 }
 
@@ -73,10 +90,6 @@ body {
   float: right;
   margin-top: 10px;
   padding-right: 5px;
-}
-
-.idea-content {
-  color: $text-color;
 }
 
 .new-idea-form {
