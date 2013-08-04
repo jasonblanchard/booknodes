@@ -4,7 +4,8 @@
   <% end %>
 </div>
 
-
-<%= div_for @events do |event| %>
-  <%= link_to event.title, event  %>
+<% if @events %>
+  <%= div_for @events do |event| %>
+    <%= link_to event.title, event  %>
+  <% end %>
 <% end %>

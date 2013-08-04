@@ -6,7 +6,7 @@ FactoryGirl.define do
     user
 
     factory :book_event_with_ideas do
-      ideas { [ FactoryGirl.build(:idea, :nodes => ['cats','dogs']), FactoryGirl.build(:idea, :nodes => ['cats']) ] }
+      ideas { [ FactoryGirl.build(:idea, :nodes => ['cats','dogs']), FactoryGirl.build(:idea, :note => 'felines are important', :nodes => ['cats']) ] }
       # {"cats"=>2, "dogs"=>1}
     end
 

@@ -10,6 +10,10 @@
       $(this).addClass('editing')
     });
 
+    $(document).on('click', '.idea-content', function() {
+      return false;
+    });
+
     $(document).on('keypress', '.idea', function(e) {
       if (e.keyCode == 13) {
         $(this).find("form").submit();
@@ -44,10 +48,10 @@
 
 <div class='ideas'>
   <%= div_for(@ideas) do |idea| %>
-    <div class='idea-content show'
+    <a class='idea-content show' href='#'>
       <p><%= simple_format idea.note %></p>
       <div class='node-list'><%= idea.list_nodes %></div>
-    </div>
+    </a>
     <%= render :partial => "ideas/inline_form", :locals => {idea: idea} %>
   <% end %>
 </div>

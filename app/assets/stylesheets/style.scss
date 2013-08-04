@@ -2,6 +2,7 @@ $dark-gray: #cccccc;
 $light-gray: #efefef;
 $gray-border: #AAAAAA;
 $light-gray-border: #CCCCCC;
+$text-color: rgb(65, 65, 65);
 
 html, body, .main, .full-height {
   height: 100%;
@@ -9,7 +10,7 @@ html, body, .main, .full-height {
 
 body {
   background: $light-gray;
-  color: rgb(65, 65, 65);
+  color: $text-color;
 }
 
 .topbar {
@@ -39,6 +40,11 @@ body {
 .idea {
   padding: 5px;
   border-bottom: 1px solid $light-gray-border;
+
+  &:hover {
+    box-shadow: 0 0 10px #BEBEBE;
+    border-bottom: none;
+  }
 }
 
 .node-list {
@@ -69,6 +75,10 @@ body {
   padding-right: 5px;
 }
 
+.idea-content {
+  color: $text-color;
+}
+
 .new-idea-form {
   display: none;
 }
@@ -84,3 +94,4 @@ body {
 .idea.editing form {
   display: block;
 }
+
