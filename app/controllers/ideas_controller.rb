@@ -14,7 +14,15 @@ class IdeasController < ApplicationController
 
     @idea.nodes = @idea.nodes.split(',').map { |v| v.strip }
 
-    @idea.save
+    if @idea.save
+
+      respond_to do |format|
+        format.html { render :nothing => true }
+        format.js
+      end
+    
+    end
+
   end
 
   def update
