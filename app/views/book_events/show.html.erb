@@ -6,10 +6,6 @@
       $(this).addClass('editing')
     });
 
-    $(document).on('click', '.idea-content', function() {
-      return false;
-    });
-
     $(document).on('keypress', '.idea', function(e) {
       if (e.keyCode == 13) {
         $(this).find("form").submit();
