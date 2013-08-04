@@ -54,5 +54,13 @@ describe IdeasController do
 
   end
 
+  describe 'delete' do
+
+    it 'should delete an idea' do
+
+      expect { delete :destroy, :book_event_id => @event.id, :id => @event.ideas[0].id }.to change{BookEvent.find(@event.id).ideas.count}.by(-1)
+
+    end
+  end
 
 end
