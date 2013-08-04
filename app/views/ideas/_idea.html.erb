@@ -1,18 +1,27 @@
 <%= div_for(idea) do |i| %>
   <a class='idea-content show' href='#'>
     <div class='row'>
-      <div class='large12 columns'>
+      <div class='large-4 small-8 large-offset-8 small-offset-4 columns metadata text-align-right'>
+        <%= idea.created_at %>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='large-12 columns'>
         <p><%= simple_format i.note %></p>
       </div>
     </div>
+
     <div class='row'>
       <div class='large-6 columns'>
         <div class='node-list'><%= i.list_nodes %></div>
       </div>
+
       <div class='large-6 columns'>
         <div class='page-number'><%= "p. #{idea.page}" if idea.page %></div>
       </div>
     </div>
+
   </a>
   <%= render :partial => "ideas/inline_form", :locals => {idea: i} %>
 <% end %>

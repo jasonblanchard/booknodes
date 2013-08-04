@@ -5,6 +5,8 @@ $light-gray-border: #CCCCCC;
 $text-color: rgb(65, 65, 65);
 $light-text-color: rgb(114, 114, 114);
 $small-text-size: .9em;
+$extra-small-font: .85em;
+$extra-light-text: #AFA298;
 
 html, body, .main, .full-height {
   height: 100%;
@@ -14,6 +16,11 @@ html, body, .main, .full-height {
 body {
   background: $light-gray;
   color: $text-color;
+}
+
+.metadata {
+  color: $extra-light-text;
+  font-size: $extra-small-font;
 }
 
 .clearfix {
@@ -124,4 +131,9 @@ body {
 
 .idea.editing form {
   display: block;
+}
+
+/* Utilities */
+.text-align-right {
+  text-align: right;
 }
