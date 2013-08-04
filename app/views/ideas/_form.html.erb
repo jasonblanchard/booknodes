@@ -1,6 +1,7 @@
 <%= form_for([@event, @event.ideas.new], :remote => true) do |f| %>
-  <%= f.text_area :note %>
-  <%= f.text_field :nodes %>
+  <%= f.text_area :note, :placeholder => 'Note' %>
+  <%= f.text_field :nodes, :placeholder => 'Idea nodes' %>
+  <%= f.text_field :page, :placeholder => 'Page number' %>
   <%= f.submit %>
 
 <% end %>

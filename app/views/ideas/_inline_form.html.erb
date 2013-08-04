@@ -1,6 +1,7 @@
 <%= form_for([@event, idea], :remote => true, :url => book_event_idea_path(@event, idea)) do |f| %>
-  <%= f.text_area :note %>
-  <%= f.text_field :nodes, :value => idea.nodes.join(', ') %>
+  <%= f.text_area :note, :placeholder => 'Note' %>
+  <%= f.text_field :nodes, :value => idea.nodes.join(', '), :placeholder => 'Idea nodes' %>
+  <%= f.text_field :page, :placeholder => 'Page number'  %>
   <%= f.submit %>
   <%= link_to "Delete", book_event_idea_path(@event, idea), :method => :delete %>
 <% end %>

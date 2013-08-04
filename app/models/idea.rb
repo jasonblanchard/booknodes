@@ -4,6 +4,7 @@ class Idea
   
   field :note
   field :nodes, type: Array
+  field :page, type: Integer
   embedded_in :book_event
 
   def list_nodes

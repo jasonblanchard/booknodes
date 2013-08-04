@@ -2,6 +2,7 @@
   <a class='idea-content show' href='#'>
     <p><%= simple_format i.note %></p>
     <div class='node-list'><%= i.list_nodes %></div>
+    <div class='page-number'><%= "On page #{idea.page}" if idea.page %></div>
   </a>
   <%= render :partial => "ideas/inline_form", :locals => {idea: i} %>
 <% end %>

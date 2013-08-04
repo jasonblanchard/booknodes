@@ -56,7 +56,7 @@ class IdeasController < ApplicationController
   private
 
   def idea_params
-    params.require(:idea).permit(:note, :nodes)
+    params.require(:idea).permit(:note, :nodes, :page)
   end
 
 end
