@@ -1,9 +1,5 @@
 <% content_for :scripts do %>
   <script>
-    $(document).on('click', 'a.new-idea', function() {
-      $('.new-idea-form').slideToggle('fast');
-      return false;
-    });
 
     $(document).on('dblclick', '.idea', function() {
       $('.idea').removeClass('editing');

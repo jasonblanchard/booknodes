@@ -17,3 +17,9 @@
 //= require_tree .
 
 $(document).foundation();
+
+$(document).on('click', 'a.new-idea', function() {
+  $('.new-idea-form').slideToggle('fast');
+  return false;
+});
+
