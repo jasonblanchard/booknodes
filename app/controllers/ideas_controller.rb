@@ -1,4 +1,5 @@
 class IdeasController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:update]
 
   def show
     @idea = Idea.find(params[:id])
@@ -36,7 +37,7 @@ class IdeasController < ApplicationController
 
     if @idea.save
       respond_to do |format|
-        format.html { render :nothing => true }
+        format.html { redirect_to @event }
         format.js
       end
     end
