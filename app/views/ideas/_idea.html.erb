@@ -2,7 +2,7 @@
   <a class='idea-content show' href='#'>
     <div class='row'>
       <div class='large-4 small-8 large-offset-8 small-offset-4 columns metadata text-align-right'>
-        <%= idea.created_at %>
+        <%= timeago_tag idea.created_at, :nojs => true %>
       </div>
     </div>
 
