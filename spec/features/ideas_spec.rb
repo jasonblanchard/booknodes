@@ -17,8 +17,8 @@ feature 'idea actions' do
 
   scenario 'User can filter by clicking on nodes' do
     visit book_event_path(@event)
-
-    click_link 'dogs: 1'
+  
+    all('.sidebar')[0].click_link 'dogs (1)'
 
     page.should_not have_content 'felines are important'
   end

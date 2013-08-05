@@ -82,10 +82,12 @@ body {
 }
 
 
-.node-list, .page-number {
+.info {
   font-size: $small-text-size;
   color: $light-text-color;
+  font-weight: bold;
 }
+
 
 .page-number {
   text-align: right;
