@@ -7,6 +7,7 @@ $light-text-color: rgb(114, 114, 114);
 $small-text-size: .9em;
 $extra-small-font: .85em;
 $extra-light-text: #AFA298;
+$dark-blue: #3B3B86;
 
 html, body, .main, .full-height {
   height: 100%;
@@ -138,6 +139,31 @@ body {
 .idea.editing form {
   display: block;
 }
+
+/* Buttons */
+.idea-actions {
+  padding: 5% 0;
+}
+
+.edit-button {
+  background: $dark-blue;
+  color: rgb(243, 243, 243);
+  width: 38px;
+  display: block;
+  text-align: center;
+  height: 30px;
+  padding-top: 3px;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 1.5em;
+  display:none;
+
+  &:hover {
+    background: #66669C;
+    color: rgb(243, 243, 243);
+  }
+}
+
 
 /* Utilities */
 .text-align-right {

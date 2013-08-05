@@ -1,9 +1,19 @@
 <% content_for :scripts do %>
   <script>
 
+    $(document).on('mouseenter', '.idea', function() {
+     // $(this).find('.edit-button').show();
+    });
+
     $(document).on('dblclick', '.idea', function() {
       $('.idea').removeClass('editing');
       $(this).addClass('editing')
+    });
+
+    $(document).on('click', '.edit-button', function() {
+      $('.idea').removeClass('editing');
+      $(this).closest('.idea').addClass('editing')
+      return false;
     });
 
     $(document).on('keypress', '.idea', function(e) {
