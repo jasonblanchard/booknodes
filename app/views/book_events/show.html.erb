@@ -18,6 +18,11 @@
       $(this).addClass('editing')
     });
 
+    $(document).on('doubletap', '.idea', function() {
+      $('.idea').removeClass('editing');
+      $(this).addClass('editing')
+    });
+
     $(document).on('click', '.edit-button', function() {
       $('.idea').removeClass('editing');
       $(this).closest('.idea').addClass('editing')
