@@ -7,7 +7,8 @@ $light-text-color: rgb(114, 114, 114);
 $small-text-size: .9em;
 $extra-small-font: .85em;
 $extra-light-text: #AFA298;
-$dark-blue: #3B3B86;
+$button-blue: #9191A3;
+$button-hover-blue: rgb(243, 243, 243);
 
 html, body, .main, .full-height {
   height: 100%;
@@ -142,25 +143,33 @@ body {
 
 /* Buttons */
 .idea-actions {
-  padding: 5% 0;
+  padding: 2% 0;
 }
 
-.edit-button {
-  background: $dark-blue;
+@mixin site-button-base {
+  background: $button-blue;
   color: rgb(243, 243, 243);
   width: 38px;
   display: block;
   text-align: center;
   height: 30px;
-  padding-top: 3px;
+  padding-top: 2px;
+  padding-left: 0px;
+  padding-right: 0px;
   border-radius: 2px;
   font-weight: bold;
   font-size: 1.5em;
-  display:none;
+  margin-bottom: 0px;
+}
+
+.edit-button {
+  @include site-button-base;
+  display: none;
+  padding-top: 0px;
 
   &:hover {
     background: #66669C;
-    color: rgb(243, 243, 243);
+    color: $button-hover-blue
   }
 }
 

@@ -2,7 +2,11 @@
   <script>
 
     $(document).on('mouseenter', '.idea', function() {
-     // $(this).find('.edit-button').show();
+     $(this).find('.edit-button').show();
+   });
+
+    $(document).on('mouseleave', '.idea', function() {
+     $(this).find('.edit-button').hide();
     });
 
     $(document).on('dblclick', '.idea', function() {
