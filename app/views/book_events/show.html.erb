@@ -13,11 +13,6 @@
      $(this).find('.edit-button').hide();
     });
 
-    $(document).on('dbltap', '.idea', function() {
-      $('.idea').removeClass('editing');
-      $(this).addClass('editing')
-    });
-
     $(document).on('click', '.edit-button', function() {
       $('.idea').removeClass('editing');
       $(this).closest('.idea').addClass('editing')
