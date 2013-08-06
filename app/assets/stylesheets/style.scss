@@ -36,9 +36,15 @@ body {
 .topbar {
   height: 40px;
   border-bottom: 1px solid $gray-border;
-  /* position: fixed; */
+  background: $light-gray;
+  position: fixed;
   width: 100%;
   padding-left: 5px;
+  z-index: 998;
+
+  .row {
+    margin-left: 0px;
+  }
 }
 
 .content {
@@ -114,13 +120,7 @@ body {
   }
 }
 
-.subheader.event-title {
-  width: 50%;
-  float: left;
-}
-
 .new-idea {
-  float: right;
   margin-top: 10px;
   padding-right: 5px;
 }
@@ -177,4 +177,8 @@ body {
 /* Utilities */
 .text-align-right {
   text-align: right;
+}
+
+.height40 {
+  height: 40px;
 }

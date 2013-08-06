@@ -41,10 +41,19 @@
 <% end %>
 
 <% content_for :topbar do %>
-  <a href='#' class='expand-sidebar-button'>>></a>
-  <h1 class='subheader event-title'><%= @event.title %></h1>
-  <%= link_to 'New Idea', '#', :class => 'new-idea' %>
+  <div class='row'>
+    <div class='large-1 small-1 columns'>
+      <a href='#' class='expand-sidebar-button'>>></a>
+    </div>
+    <div class='large-6 small-9 columns'>
+      <h1 class='subheader event-title'><%= @event.title %></h1>
+    </div>
+    <div class='large-6 small-2 columns'>
+      <%= link_to 'New Idea', '#', :class => 'new-idea' %>
+    </div>
+  </div>
 <% end %>
+<div class='clearfix height40'></div>
 
 <% content_for :sidebar do %>
   <div class='idea-list'>
@@ -55,6 +64,8 @@
 <%= content_for :mobile_sidebar do %>
   <div class='idea-list'>
     <div><a href='#' class='expand-sidebar-button'><<</a></div>
+    <br />
+    <br />
     <div class='clearfix'></div>
     <%= render 'idea_list' %>
   </div>
