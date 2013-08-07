@@ -27,6 +27,12 @@ describe IdeasController do
       
     end
 
+    it 'pull nodes from the note' do
+      post :create, "idea"=>{"note"=>"This {note} has {idea nodes} in it with {cats}.", "nodes"=>"catdog, note"}, "book_event_id" => @event.id
+
+      assigns[:idea].nodes.should match_array(['note','idea nodes','catdog', 'cats'])
+    end
+
   end
 
   describe 'update' do

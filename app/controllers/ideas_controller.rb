@@ -52,8 +52,20 @@ class IdeasController < ApplicationController
 
   def idea_params
     params.require(:idea).permit(:note, :nodes, :page).tap do |whitelisted|
-      whitelisted[:nodes] = Idea.split_node_string(whitelisted[:nodes])
+      whitelisted[:nodes] = combine_node_sources(whitelisted)
     end
+  end
+
+  def combine_node_sources(params)
+    process_node_param(params[:nodes]).concat(process_nodes_from_note(params[:note])).map { |v| v.strip }.uniq
+  end
+
+  def process_node_param(nodes)
+    Idea.split_node_string(nodes)
+  end
+
+  def process_nodes_from_note(note)
+    Idea.split_nodes_from_note(note)
   end
 
 end
