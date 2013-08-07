@@ -12,11 +12,11 @@ class Idea
   end
 
   def self.split_node_string(nodes)
-    nodes.split(',').map { |v| v.strip }
+    nodes.split(',').map { |v| v.strip.downcase }
   end
 
   def self.split_nodes_from_note(string)
-    string.scan(/{(.*?)}/).flatten
+    string.scan(/{(.*?)}/).flatten.map { |v| v.strip.downcase }
   end
 
   def self.remove_node_delimiter(string)
