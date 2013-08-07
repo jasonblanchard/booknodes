@@ -13,4 +13,15 @@ describe Idea do
     
     event.ideas[0].list_nodes.should eq("cats, dogs")
   end
+
+  it 'can split a comma-delimited string of nodes into an array' do
+    nodes = 'cats, dogs, and turtles'
+
+    Idea.split_node_string(nodes).should match_array(['cats','dogs','and turtles'])
+  end
+
+  it 'can extract node values from the note between {curly brackets}' do
+    Idea.split_nodes_from_note("This is a {sentence} with {two nodes}").should match_array(['sentence', 'two nodes'])
+  end
+
 end
