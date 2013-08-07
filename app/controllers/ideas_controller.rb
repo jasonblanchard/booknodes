@@ -31,6 +31,8 @@ class IdeasController < ApplicationController
 
     @idea.update_attributes(idea_params)
 
+    @idea_list = @event.all_idea_nodes
+
     if @idea.save
       respond_to do |format|
         format.html { redirect_to @event }
