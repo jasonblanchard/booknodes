@@ -1,5 +1,7 @@
-<%= link_to content_tag(:div, 'All', :class => 'idea-node'), book_event_path(@event) %>
+<div class='idea-list'>
+  <%= link_to content_tag(:div, 'All', :class => 'idea-node'), book_event_path(@event) %>
 
-<% @idea_list.each do |idea,number| %>
-  <%= link_to content_tag(:div, raw("#{idea} <span class='info'>(#{number})</span>"), :class => 'idea-node'), idea_filter_path(@event, idea)  %>
-<% end %>
+  <% @idea_list.each do |idea,number| %>
+    <%= link_to content_tag(:div, raw("#{idea} <span class='info'>(#{number})</span>"), :class => 'idea-node'), idea_filter_path(@event, idea)  %>
+  <% end %>
+</div>

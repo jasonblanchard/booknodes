@@ -12,6 +12,7 @@ class IdeasController < ApplicationController
   def create
     @event = BookEvent.find(params[:book_event_id])
     @idea = @event.ideas.new(idea_params)
+    @idea_list = @event.all_idea_nodes
 
     if @idea.save
 
