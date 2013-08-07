@@ -13,8 +13,6 @@ class IdeasController < ApplicationController
     @event = BookEvent.find(params[:book_event_id])
     @idea = @event.ideas.new(idea_params)
 
-    @idea.nodes = @idea.nodes.split(',').map { |v| v.strip }
-
     if @idea.save
 
       respond_to do |format|
@@ -31,9 +29,6 @@ class IdeasController < ApplicationController
     @idea = @event.ideas.find(params[:id])
 
     @idea.update_attributes(idea_params)
-    
-    # TODO: This is making two UPDATE calls. Figure out how to do this better
-    @idea.nodes = @idea.nodes.split(',').map { |v| v.strip }
 
     if @idea.save
       respond_to do |format|
@@ -56,7 +51,9 @@ class IdeasController < ApplicationController
   private
 
   def idea_params
-    params.require(:idea).permit(:note, :nodes, :page)
+    params.require(:idea).permit(:note, :nodes, :page).tap do |whitelisted|
+      whitelisted[:nodes] = Idea.split_node_string(whitelisted[:nodes])
+    end
   end
 
 end
