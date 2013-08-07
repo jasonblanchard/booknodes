@@ -53,6 +53,7 @@ class IdeasController < ApplicationController
   def idea_params
     params.require(:idea).permit(:note, :nodes, :page).tap do |whitelisted|
       whitelisted[:nodes] = combine_node_sources(whitelisted)
+      whitelisted[:note] = Idea.remove_node_delimiter(whitelisted[:note])
     end
   end
 

@@ -19,4 +19,8 @@ class Idea
     string.scan(/{(.*?)}/).flatten
   end
 
+  def self.remove_node_delimiter(string)
+    string.gsub(/{|}/, '')
+  end
+
 end

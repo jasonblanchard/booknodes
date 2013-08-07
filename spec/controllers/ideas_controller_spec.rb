@@ -31,6 +31,7 @@ describe IdeasController do
       post :create, "idea"=>{"note"=>"This {note} has {idea nodes} in it with {cats}.", "nodes"=>"catdog, note"}, "book_event_id" => @event.id
 
       assigns[:idea].nodes.should match_array(['note','idea nodes','catdog', 'cats'])
+      assigns[:idea].note.should eq "This note has idea nodes in it with cats."
     end
 
   end
