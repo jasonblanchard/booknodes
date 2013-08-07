@@ -1,4 +1,8 @@
 <div class='idea-list'>
+  <div><a href='#' class='expand-sidebar-button'><<</a></div>
+  <br />
+  <br />
+  <div class='clearfix'></div>
   <%= link_to content_tag(:div, 'All', :class => 'idea-node'), book_event_path(@event) %>
 
   <% @idea_list.each do |idea,number| %>
