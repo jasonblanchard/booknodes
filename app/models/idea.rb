@@ -14,6 +14,7 @@ class Idea
       :access_key_id => ENV['ACCESS_KEY_ID'],
       :secret_access_key => ENV['SECRET_ACCESS_KEY'],
     },
+    :convert_options => { :all => '-auto-orient' },
     :styles => {
       :medium => '500x500>'
     }
