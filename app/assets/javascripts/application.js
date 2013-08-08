@@ -21,6 +21,8 @@
 
 $(document).foundation();
 
+// TODO: Maybe these shouldn't live here?
+
 $(document).on('click.ideaEvents', 'a.new-idea', function() {
   $('.new-idea-form').slideToggle('fast');
   return false;
