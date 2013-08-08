@@ -2,6 +2,7 @@
   <%= f.text_area :note, :placeholder => 'Note' %>
   <%= f.text_field :nodes, :value => idea.nodes.join(', '), :placeholder => 'Idea nodes' %>
   <%= f.text_field :page, :placeholder => 'Page number'  %>
+  <%= f.file_field :image %>
   <%= f.submit %>
   <button class='cancel-idea-form'>Cancel</button>
   <%= link_to "Delete", book_event_idea_path(@event, idea), :method => :delete %>
