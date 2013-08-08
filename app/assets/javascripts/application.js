@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.ui.effect.all
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require foundation
 //= require turbolinks
 //= require rails-timeago

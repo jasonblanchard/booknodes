@@ -16,6 +16,12 @@
     </div>
 
     <div class='row'>
+      <div class='large-12 columns'>
+        <%= image_tag i.image.url(:medium) unless i.image_file_name.nil? %>
+      </div>
+    </div>
+
+    <div class='row'>
       <div class='large-6 columns'>
         <div class='node-list info'><%= i.list_nodes %></div>
       </div>

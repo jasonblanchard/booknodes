@@ -1,11 +1,22 @@
 class Idea
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Paperclip
   
   field :note
   field :nodes, type: Array
   field :page, type: Integer
   embedded_in :book_event
+  has_mongoid_attached_file :image,
+    :storage => :s3,
+    :bucket => ENV['BUCKET'],
+    :s3_credentials => {
+      :access_key_id => ENV['ACCESS_KEY_ID'],
+      :secret_access_key => ENV['SECRET_ACCESS_KEY'],
+    },
+    :styles => {
+      :medium => '500x500>'
+    }
 
   def list_nodes
     nodes.join(', ') unless nodes.nil?

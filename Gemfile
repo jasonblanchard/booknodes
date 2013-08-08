@@ -62,3 +62,8 @@ gem 'debugger'
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails_12factor', group: :production
+
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem 'aws-sdk', '~> 1.3.4'
+gem 'remotipart', '~> 1.2'
+gem 'figaro'

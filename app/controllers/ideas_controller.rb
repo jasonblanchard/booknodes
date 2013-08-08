@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:update]
+  skip_before_action :verify_authenticity_token, only: [:update, :create]
 
   def show
     @idea = Idea.find(params[:id])
@@ -54,7 +54,7 @@ class IdeasController < ApplicationController
   private
 
   def idea_params
-    params.require(:idea).permit(:note, :nodes, :page).tap do |whitelisted|
+    params.require(:idea).permit(:note, :nodes, :page, :image).tap do |whitelisted|
       whitelisted[:nodes] = combine_node_sources(whitelisted)
       whitelisted[:note] = Idea.remove_node_delimiter(whitelisted[:note])
     end
