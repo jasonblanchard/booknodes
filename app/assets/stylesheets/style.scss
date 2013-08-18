@@ -22,8 +22,8 @@ body {
 }
 
 .event-title {
-  font-family: 'Playfair Display', serif;
   font-weight: 700;
+  font-family: 'Lato','Helvetica Neue','Arial', sans-serif;
 }
 
 
@@ -225,12 +225,17 @@ body {
   margin: 5px;
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
   font-size: 1.1em;
+  font-weight: bold;
+  padding-top: 0px;
+  padding-bottom: 4px;
 }
 
 .btn.new-idea {
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
   font-weight: bold;
+  padding-top: 0px;
+  margin-top: 5px;
 }
 
 
