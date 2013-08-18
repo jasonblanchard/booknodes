@@ -1,5 +1,5 @@
-$dark-gray: #cccccc;
-$light-gray: #efefef;
+$dark-gray: #E4E4E4;
+$light-gray: #FFFFFF;
 $gray-border: #AAAAAA;
 $light-gray-border: #CCCCCC;
 $text-color: rgb(65, 65, 65);
@@ -225,4 +225,12 @@ body {
 
 .height40 {
   height: 40px;
+}
+
+.link-warning {
+  color: #CF4F4F;
+
+  &:hover {
+    color: #B84343;
+  }
 }

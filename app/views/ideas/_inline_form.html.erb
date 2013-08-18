@@ -6,8 +6,8 @@
     <%= f.file_field :image %>
   </div>
   <div class='row actions'>
-    <%= f.submit %>
+    <%= f.submit :class => 'btn' %>
     <a href='#' class='btn cancel-idea-form'>Cancel</a>
-    <%= link_to "Delete", book_event_idea_path(@event, idea), :method => :delete, :class => "btn btn-warning" %>
+    <%= link_to "Delete", book_event_idea_path(@event, idea), :method => :delete, :class => "link-warning", :confirm => "Are you sure?" %>
   </div>
 <% end %>
