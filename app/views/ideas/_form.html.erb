@@ -1,8 +1,12 @@
 <%= form_for([@event, @event.ideas.new], :remote => true, :html => { :multipart => true }) do |f| %>
-  <%= f.text_area :note, :placeholder => 'Note' %>
-  <%= f.text_field :nodes, :placeholder => 'Idea nodes' %>
-  <%= f.text_field :page, :placeholder => 'Page number' %>
-  <%= f.file_field :image %>
-  <%= f.submit %>
+  <div class='row'>
+    <%= f.text_area :note, :placeholder => 'Note' %>
+    <%= f.text_field :nodes, :placeholder => 'Idea nodes' %>
+    <%= f.text_field :page, :placeholder => 'Page number' %>
+    <%= f.file_field :image %>
+  </div>
+  <div class='row actions'>
+    <%= f.submit %>
+  </div>
 
 <% end %>
