@@ -12,17 +12,25 @@ $button-hover-blue: rgb(243, 243, 243);
 
 html, body, .main, .full-height {
   height: 100%;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 body {
   background: $light-gray;
   color: $text-color;
+  font-family: 'Lato', sans-serif;
 }
+
+.event-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
 
 .metadata {
   color: $extra-light-text;
   font-size: $extra-small-font;
+  font-family: 'Glegoo', serif;
 }
 
 .clearfix {
@@ -69,8 +77,8 @@ body {
   border-bottom: 1px solid $light-gray-border;
 
   &:hover {
-    box-shadow: 0 0 10px #BEBEBE;
-    border-bottom: none;
+    border-top: 2px solid #9191a3;
+    border-bottom: 2px solid #9191a3;
   }
 
   .row {
@@ -99,7 +107,7 @@ body {
 .info {
   font-size: $small-text-size;
   color: $light-text-color;
-  font-weight: bold;
+  font-family: 'glegoo', serif;
 }
 
 
@@ -115,6 +123,7 @@ body {
     border-bottom: 1px solid $gray-border;
     padding-top: 7px;
     padding-left: 5px;
+    
 
     &:hover {
       background: $light-gray;
