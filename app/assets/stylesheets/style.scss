@@ -92,6 +92,7 @@ body {
   img {
     display: block;
     margin: 0 auto;
+    margin-bottom: 7px;
   }
 }
 
@@ -143,6 +144,7 @@ body {
 .new-idea-form {
   display: none;
   border-bottom: 1px solid $gray-border;
+  padding: 5px;
 }
 
 .ideas form {
@@ -215,6 +217,20 @@ body {
     background: #66669C;
     color: $button-hover-blue
   }
+}
+
+.btn.expand-sidebar-button {
+  @include site-button-base;
+  width: 50px;
+  margin: 5px;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 1.1em;
+}
+
+.btn.new-idea {
+  font-size: 1.8em;
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: bold;
 }
 
 

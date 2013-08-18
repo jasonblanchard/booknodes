@@ -8,14 +8,14 @@
 
 <% content_for :topbar do %>
   <div class='row'>
-    <div class='large-1 small-1 columns'>
-      <a href='#' class='expand-sidebar-button'>>></a>
+    <div class='large-1 small-2 columns'>
+      <a href='#' class='expand-sidebar-button btn'>>></a>
     </div>
-    <div class='large-6 small-9 columns'>
+    <div class='large-6 small-8 columns'>
       <h1 class='subheader event-title'><%= @event.title %></h1>
     </div>
     <div class='large-6 small-2 columns'>
-      <%= link_to 'New Idea', '#', :class => 'new-idea' %>
+      <%= link_to '+', '#', :class => 'new-idea btn' %>
     </div>
   </div>
 <% end %>
