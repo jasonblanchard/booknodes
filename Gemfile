@@ -67,3 +67,4 @@ gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem 'aws-sdk', '~> 1.3.4'
 gem 'remotipart', '~> 1.2'
 gem 'figaro'
+gem 'newrelic_rpm'
