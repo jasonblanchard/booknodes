@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   private
 
   def check_email_param
-    redirect_to edit_user_registration_path if current_user.email.blank?
+    redirect_to add_email_path if current_user.email.blank?
   end
 end

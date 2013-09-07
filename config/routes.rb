@@ -1,6 +1,9 @@
 Booknotes::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => 'registrations' }
 
+  get '/user-email/new' => 'user_emails#add_email', :as => 'add_email'
+  patch '/user-email/update' => 'user_emails#update_email', :as => 'update_email'
+
   root :to => 'home#index'
 
   resources :book_events do
