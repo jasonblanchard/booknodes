@@ -1,7 +1,7 @@
-$dark-gray: #E4E4E4;
-$light-gray: #FFFFFF;
-$gray-border: #AAAAAA;
-$light-gray-border: #CCCCCC;
+$sidebar-background: #E4E4E4;
+$main-background: #FFFFFF;
+$main-boarder: #AAAAAA;
+$lighter-border: #CCCCCC;
 $text-color: rgb(65, 65, 65);
 $light-text-color: rgb(114, 114, 114);
 $small-text-size: .9em;
@@ -16,7 +16,7 @@ html, body, .main, .full-height {
 }
 
 body {
-  background: $light-gray;
+  background: $main-background;
   color: $text-color;
   font-family: 'Lato', sans-serif;
 }
@@ -43,8 +43,8 @@ body {
 
 .topbar {
   height: 40px;
-  border-bottom: 1px solid $gray-border;
-  background: $light-gray;
+  border-bottom: 1px solid $main-boarder;
+  background: $main-background;
   position: fixed;
   width: 100%;
   padding-left: 5px;
@@ -60,8 +60,8 @@ body {
 }
 
 .sidebar {
-  background: $dark-gray;
-  border-right: 1px solid $gray-border;
+  background: $sidebar-background;
+  border-right: 1px solid $main-boarder;
   float: left;
   width: 240px;
   position: fixed;
@@ -74,7 +74,7 @@ body {
 
 .idea {
   padding: 5px;
-  border-bottom: 1px solid $light-gray-border;
+  border-bottom: 1px solid $lighter-border;
 
   &:hover {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -121,13 +121,13 @@ body {
 
   .idea-node {
     height: 30px;
-    border-bottom: 1px solid $gray-border;
+    border-bottom: 1px solid $main-boarder;
     padding-top: 7px;
     padding-left: 5px;
     
 
     &:hover {
-      background: $light-gray;
+      background: $main-background;
     }
   }
 
@@ -143,7 +143,7 @@ body {
 
 .new-idea-form {
   display: none;
-  border-bottom: 1px solid $gray-border;
+  border-bottom: 1px solid $main-boarder;
   padding: 5px;
 }
 
