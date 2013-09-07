@@ -5,6 +5,7 @@ class User
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  devise :omniauthable, :omniauth_providers => [:goodreads]
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""
@@ -23,6 +24,9 @@ class User
   field :last_sign_in_at,    :type => Time
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
+  field :provider
+  field :uid
+  field :name
 
   has_many :book_events
 

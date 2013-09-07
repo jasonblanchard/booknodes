@@ -68,3 +68,7 @@ gem 'aws-sdk', '~> 1.3.4'
 gem 'remotipart', '~> 1.2'
 gem 'figaro'
 gem 'newrelic_rpm'
+gem 'omniauth-goodreads', require: 'omniauth-goodreads'
+gem 'multi_xml'
+gem 'omniauth-oauth'
+
