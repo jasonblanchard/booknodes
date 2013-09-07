@@ -43,4 +43,24 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+ 
+  def self.find_for_goodreads_oauth(auth, signed_in_resource=nil)
+    if signed_in_resource
+      signed_in_resource.update_attributes(:provider => auth.provider, :uid => auth.uid)
+      return signed_in_resource
+    end
+
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(:provider => auth.provider, :uid => auth.uid, :password => Devise.friendly_token)
+    end
+    user
+  end
+
+  private
+
+  def email_required?
+      super && provider.blank?
+  end
+
 end
