@@ -1,8 +1,7 @@
 <p>What's your email?</p>
 
-<%= form_for current_user, :url => update_email_path do |f| %>
+<%= form_for @user, :url => update_email_path do |f| %>
   <%= f.label :email %>
   <%= f.text_field :email %>
-  <%= f.hidden_field :uid %>
   <%= f.submit %>
 <% end %>
