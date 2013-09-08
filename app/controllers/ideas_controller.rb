@@ -46,9 +46,13 @@ class IdeasController < ApplicationController
     @event = BookEvent.find(params[:book_event_id])
     @idea = @event.ideas.find(params[:id])
 
-    @idea.destroy
+    if @idea.destroy
+      respond_to do |format|
+        format.html { redirect_to @event }
+        format.js
+      end
+    end
 
-    redirect_to @event
   end
 
   private
