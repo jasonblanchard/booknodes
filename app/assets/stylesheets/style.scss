@@ -10,7 +10,8 @@ $extra-light-text: #AFA298;
 /* Button */
 $main-button-color: #C96A46;
 $main-button-border-color: #AC6043;
-$main-button-hover-color: rgb(243, 243, 243);
+$main-button-hover-color: #66669C;
+$main-button-hover-border-color: #66669C;
 
 /* Sidebar */
 $sidebar-background: #3f4944;
@@ -196,8 +197,9 @@ body {
   font-size: 14px;
 
   &:hover {
-    background: #66669C;
-    color: $main-button-hover-color
+    background: $main-button-hover-color;
+    color: rgb(243, 243, 243);
+    border: 1px solid $main-button-hover-border-color;
   }
 }
 
@@ -222,10 +224,6 @@ body {
   font-weight: bold;
   padding-bottom: 30px;
 
-  &:hover {
-    background: #66669C;
-    color: $main-button-hover-color
-  }
 }
 
 .btn.expand-sidebar-button {
