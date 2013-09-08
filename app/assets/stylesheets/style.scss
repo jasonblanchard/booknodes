@@ -1,5 +1,4 @@
-$sidebar-background: #E4E4E4;
-$main-background: #FFFFFF;
+$main-background: #fff;
 $main-boarder: #AAAAAA;
 $lighter-border: #CCCCCC;
 $text-color: rgb(65, 65, 65);
@@ -7,8 +6,17 @@ $light-text-color: rgb(114, 114, 114);
 $small-text-size: .9em;
 $extra-small-font: .85em;
 $extra-light-text: #AFA298;
-$button-blue: #9191A3;
-$button-hover-blue: rgb(243, 243, 243);
+
+/* Button */
+$main-button-color: #C96A46;
+$main-button-border-color: #AC6043;
+$main-button-hover-color: rgb(243, 243, 243);
+
+/* Sidebar */
+$sidebar-background: #3f4944;
+$sidebar-hover-background: #59635E;
+$sidebar-text-color: rgb(194, 194, 194);
+$sidebar-border-color: rgba(88, 88, 88, 0.49);
 
 html, body, .main, .full-height {
   height: 100%;
@@ -121,13 +129,14 @@ body {
 
   .idea-node {
     height: 30px;
-    border-bottom: 1px solid $main-boarder;
+    border-bottom: 1px solid $sidebar-border-color;
     padding-top: 7px;
     padding-left: 5px;
+    color: $sidebar-text-color;
     
 
     &:hover {
-      background: $main-background;
+      background: $sidebar-hover-background;
     }
   }
 
@@ -172,7 +181,7 @@ body {
 }
 
 @mixin site-button-base {
-  background: $button-blue;
+  background: $main-button-color;
   color: rgb(243, 243, 243);
   text-align: center;
   padding-top: 4px;
@@ -180,7 +189,7 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 2px;
-  border: 1px solid #2284a1;
+  border: 1px solid $main-button-border-color;
   margin-bottom: 0px;
   width: 100px;
   font-family: 'glegoo','serif';
@@ -188,7 +197,7 @@ body {
 
   &:hover {
     background: #66669C;
-    color: $button-hover-blue
+    color: $main-button-hover-color
   }
 }
 
@@ -215,7 +224,7 @@ body {
 
   &:hover {
     background: #66669C;
-    color: $button-hover-blue
+    color: $main-button-hover-color
   }
 }
 
