@@ -2,3 +2,4 @@ $('.ideas').prepend("<%= escape_javascript( render(@idea)) %>");
 $('#new_idea')[0].reset();
 $('.new-idea-form').slideToggle('fast');
 $('.idea-list').replaceWith("<%= escape_javascript( render :partial => 'book_events/idea_list') %>");
+$('#<%= dom_id(@idea) %>').effect('highlight', {color:'#c96a46'});
