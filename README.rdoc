@@ -1,3 +1,4 @@
 == BookNotes
 
 A little experiment with Rails 4 and MongoDB
+
