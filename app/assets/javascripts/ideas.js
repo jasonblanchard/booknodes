@@ -28,7 +28,7 @@ $(document).on('click.ideaEvents', 'a.expand-sidebar-button', function() {
     $(this).addClass('editing')
   });
 
-  $(document).on('click', '.cancel-idea-form', function() {
+  $(document).on('click', '.cancel-idea-update-form', function() {
     $('.idea').removeClass('editing');
     return false;
   });
