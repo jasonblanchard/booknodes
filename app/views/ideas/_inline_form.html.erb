@@ -1,4 +1,4 @@
-<%= form_for([@event, idea], :remote => true, :url => book_event_idea_path(@event, idea)) do |f| %>
+<%= form_for([@event, idea], :remote => true, :url => book_event_idea_path(@event, idea), :html => { :multipart => true }) do |f| %>
   <div class='row'>
     <%= f.text_area :note, :placeholder => 'Note' %>
     <%= f.text_field :nodes, :value => idea.nodes.join(', '), :placeholder => 'Idea nodes' %>

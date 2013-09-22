@@ -1,11 +1,10 @@
 class BookEvent
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Ideaable
 
   field :title
   belongs_to :user
-  embeds_many :ideas
-  index "ideas.nodes" => 1
 
   def all_idea_nodes
     sorted_idea_nodes
