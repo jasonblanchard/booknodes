@@ -11,17 +11,10 @@ $(document).on('click.ideaEvents', 'a.expand-sidebar-button', function() {
 // TODO: Change show() to attr('visibility', 'visible')
 // Also change in css
 
-  $(document).on('mouseenter', '.idea', function() {
-   $(this).find('.edit-button').show();
- });
 
   $(document).on('click', '.idea', function() {
-   $(this).find('.edit-button').show();
+   $(this).find('.edit-button').attr('visibility','visible');
  });
-
-  $(document).on('mouseleave', '.idea', function() {
-   $(this).find('.edit-button').hide();
-  });
 
   $(document).on('dblclick', '.idea', function() {
     $('.idea').removeClass('editing');

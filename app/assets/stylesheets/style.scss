@@ -215,14 +215,18 @@ body {
   padding-right: 0px;
   padding-top: 0px;
   display: block;
-  display: none;
   padding-top: 0px;
   width: 38px;
   height: 28px;
   font-size: 21px;
   font-weight: bold;
   padding-bottom: 30px;
+  visibility: hidden;
 
+}
+
+.idea:hover .edit-button {
+  visibility: visible;
 }
 
 .btn.expand-sidebar-button {
