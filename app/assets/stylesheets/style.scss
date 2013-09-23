@@ -51,7 +51,7 @@ body {
 }
 
 .topbar {
-  height: 40px;
+  min-height: 40px;
   border-bottom: 1px solid $main-boarder;
   background: $main-background;
   position: fixed;
@@ -194,7 +194,6 @@ body {
   border-radius: 2px;
   border: 1px solid $main-button-border-color;
   margin-bottom: 0px;
-  width: 100px;
   font-family: 'glegoo','serif';
   font-size: 14px;
   display: inline-block;
