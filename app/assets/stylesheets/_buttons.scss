@@ -1,0 +1,81 @@
+$main-button-color: #C96A46;
+$main-button-border-color: #AC6043;
+$main-button-hover-color: #66669C;
+$main-button-hover-border-color: #66669C;
+
+.idea-actions {
+  padding: 2% 0;
+}
+
+@mixin site-button-base {
+  background: $main-button-color;
+  color: rgb(243, 243, 243);
+  text-align: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
+  border: 1px solid $main-button-border-color;
+  margin-bottom: 0px;
+  font-family: 'glegoo','serif';
+  font-size: 14px;
+  display: inline-block;
+  -webkit-transition: background 0.08s linear;
+  -moz-transition: background 0.08s linear;
+  transition: background 0.08s linear;
+
+  &:hover {
+    background: $main-button-hover-color;
+    color: rgb(243, 243, 243);
+    border: 1px solid $main-button-hover-border-color;
+  }
+}
+
+.btn {
+  @include site-button-base;
+}
+
+.edit-button {
+  @include site-button-base;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  border: 1px solid #2284a1;
+  font-size: 1.5em;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  display: block;
+  padding-top: 0px;
+  width: 38px;
+  height: 28px;
+  font-size: 21px;
+  font-weight: bold;
+  padding-bottom: 30px;
+  visibility: hidden;
+
+}
+
+.idea:hover .edit-button {
+  visibility: visible;
+}
+
+.btn.expand-sidebar-button {
+  @include site-button-base;
+  width: 50px;
+  margin: 5px;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-top: 0px;
+  padding-bottom: 4px;
+  display: none;
+}
+
+.btn.new-idea {
+  font-size: 1.5em;
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-weight: bold;
+  padding-top: 0px;
+  margin-top: 5px;
+  width: 36px;
+}
