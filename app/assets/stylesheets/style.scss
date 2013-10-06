@@ -18,6 +18,12 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.content {
+  -moz-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
 .event-title {
   font-weight: 700;
   font-family: 'Lato','Helvetica Neue','Arial', sans-serif;

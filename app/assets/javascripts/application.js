@@ -20,3 +20,13 @@
 //= require_tree .
 
 $(document).foundation();
+
+$(document).on('page:before-change', function() {
+  $('.content').fadeOut();
+  console.log('fetch');
+});
+
+$(document).on('page:load', function() {
+  $('.content').fadeIn();
+  console.log('receive');
+});
