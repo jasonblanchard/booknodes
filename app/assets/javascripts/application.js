@@ -21,12 +21,11 @@
 
 $(document).foundation();
 
-$(document).on('page:before-change', function() {
-  $('.content').fadeOut();
-  console.log('fetch');
+$(document).on('page:fetch', function() {
+  $('.content').fadeOut('slow');
+  $('.content').html("<img src='/images/loading.gif' class='loader' />");
 });
 
-$(document).on('page:load', function() {
-  $('.content').fadeIn();
-  console.log('receive');
+$(document).on('page:receive', function() {
+  $('.content').fadeIn('slow');
 });
