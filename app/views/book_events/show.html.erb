@@ -30,7 +30,7 @@
 <% end %>
 
 <div class='new-idea-form'>
-  <%= render 'ideas/form' %>
+  <%= render :partial =>  'ideas/form', :locals => { :idea => @event.ideas.new } %>
 </div>
 
 <div class='ideas'>

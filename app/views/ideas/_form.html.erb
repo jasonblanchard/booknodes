@@ -1,12 +1,18 @@
-<%= form_for([@event, @event.ideas.new], :remote => true, :html => { :multipart => true }) do |f| %>
+<%= form_for([@event, idea], :remote => true, :html => { :multipart => true }) do |f| %>
   <div class='row'>
     <%= f.text_area :note, :placeholder => 'Note' %>
-    <%= f.text_field :nodes, :placeholder => 'Idea nodes' %>
+    <%= f.text_field :nodes, :value => idea.list_nodes, :placeholder => 'Idea nodes' %>
     <%= f.text_field :page, :placeholder => 'Page number' %>
+    <%= f.label :image, "Upload a page image" %>
     <%= f.file_field :image %>
   </div>
   <div class='row actions'>
     <%= f.submit :class => 'btn' %>
+
+    <% if idea.persisted? %>
+      <a href='#' class='btn cancel-idea-update-form'>Cancel</a>
+      <%= link_to "Delete", book_event_idea_path(@event, idea), :method => :delete, :remote => true, :class => "link-warning", :confirm => "Are you sure?" %>
+    <% end %>
   </div>
 
 <% end %>
