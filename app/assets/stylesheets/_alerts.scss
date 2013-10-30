@@ -1,4 +1,13 @@
-.notice {
-  background: rgb(127, 218, 127);
-  border-left: 4px solid rgb(53, 80, 53);
+@import "foundation/components/alert-boxes";
+
+.flash {
+  margin-top: 10px;
+}
+
+.flash-message {
+  @include alert(#76CA7D);
+
+  .close {
+    @include alert-close;
+  }
 }

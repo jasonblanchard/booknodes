@@ -26,19 +26,27 @@
 
   <body>
 
-    <div class='flash'>
+    <div class='flash row'>
       <% if flash[:notice] %>
-        <p class="notice"><%= notice %></p>
+        <%= render :partial => 'layouts/flash', :locals => { :message => notice, :type => "notice" } %>
       <% end %>
 
-      <% if flash[:alet] %>
-        <p class="alert"><%= alert %></p>
+      <% if flash[:alert] %>
+        <%= render :partial => 'layouts/flash', :locals => { :message => alert, :type => "alert" } %>
       <% end %>
     </div>
 
-    <div class='main'>
-      <%= content_for?(:main_content) ? yield(:main_content) : yield %>
-    </div>
+    <% if content_for?(:main_content) %>
+
+      <div class='main'>
+        <%= yield(:main_content) %>
+      </div>
+
+    <% else %>
+      <div class='main row'>
+        <%= yield %>
+      </div>
+    <% end %>
 
   </body>
 </html>
