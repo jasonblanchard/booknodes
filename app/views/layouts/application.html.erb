@@ -26,15 +26,17 @@
 
   <body>
 
-    <div class='flash row'>
-      <% if flash[:notice] %>
-        <%= render :partial => 'layouts/flash', :locals => { :message => notice, :type => "notice" } %>
-      <% end %>
+    <% if notice or alert %>
+      <div class='flash row'>
+        <% if flash[:notice] %>
+          <%= render :partial => 'layouts/flash', :locals => { :message => notice, :type => "notice" } %>
+        <% end %>
 
-      <% if flash[:alert] %>
-        <%= render :partial => 'layouts/flash', :locals => { :message => alert, :type => "alert" } %>
-      <% end %>
-    </div>
+        <% if flash[:alert] %>
+          <%= render :partial => 'layouts/flash', :locals => { :message => alert, :type => "alert" } %>
+        <% end %>
+      </div>
+    <% end %>
 
     <% if content_for?(:main_content) %>
 

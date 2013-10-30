@@ -1,14 +1,16 @@
-<div class='user-actions'>
+<div class='user-actions large-12 columns'>
   <% if user_signed_in? %>
     <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign in with Goodreads", user_omniauth_authorize_path(:goodreads) %>
   <% end %>
 </div>
 
-<% if @events %>
-  <%= div_for @events do |event| %>
-    <%= link_to event.title, event  %>
+<div class='large-12 columns'>
+  <% if @events %>
+    <%= div_for @events do |event| %>
+      <%= link_to event.title, event  %>
+    <% end %>
   <% end %>
-<% end %>
-<br />
-<br />
-<%= link_to "Sign in with Goodreads", user_omniauth_authorize_path(:goodreads) %>
+  <%= link_to '+', new_book_event_path, :class => 'new-plus btn' %>
+</div>

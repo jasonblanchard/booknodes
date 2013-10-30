@@ -15,4 +15,24 @@ class BookEventsController < ApplicationController
     @idea_list = @event.all_idea_nodes
   end
 
+  def new
+    @event = BookEvent.new
+
+    render :layout => 'application'
+  end
+
+  def create
+    @event = current_user.book_events.new(book_event_params)
+
+    @event.save
+
+    redirect_to root_path
+  end
+
+  private
+
+  def book_event_params
+    params.require(:book_event).permit(:title)
+  end
+
 end
