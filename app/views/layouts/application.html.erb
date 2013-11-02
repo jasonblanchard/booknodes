@@ -26,6 +26,16 @@
 
   <body>
 
+    <div class="fixed">
+      <nav class='top-bar'>
+        <ul class='title-area'>
+          <li class='name'>
+            <h1><%= link_to "Book Nodes", root_path %></h1>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
     <% if notice or alert %>
       <div class='flash row'>
         <% if flash[:notice] %>
