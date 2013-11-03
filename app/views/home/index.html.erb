@@ -4,6 +4,8 @@
       <%= link_to event.title, event  %>
     <% end %>
   <% end %>
-  <%= link_to '+', new_book_event_path, :class => 'new-plus btn' %>
+  <% if user_signed_in? %>
+    <%= link_to '+', new_book_event_path, :class => 'new-plus btn' %>
+  <% end %>
 
 </div>
