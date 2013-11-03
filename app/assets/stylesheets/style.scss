@@ -44,9 +44,14 @@ body {
 
 .top-bar {
   border-bottom: 1px solid #aaaaaa;
+
+  a {
+    border-bottom: 1px solid #aaaaaa;
+    height: 45px;
+  }
 }
 
-.topbar {
+.event-header {
   min-height: 40px;
   border-bottom: 1px solid $main-boarder;
   background: $main-background;

@@ -15,7 +15,7 @@
     <link href='http://fonts.googleapis.com/css?family=Glegoo|Lato:400,700|Playfair+Display:400,700' rel='stylesheet' type='text/css'>
 
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Book Nodes" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -35,7 +35,13 @@
            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
         <section class='top-bar-section'>
-          <%= yield :book_title %>
+          <ul class='right'>
+            <% if user_signed_in? %>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign in with Goodreads", user_omniauth_authorize_path(:goodreads) %></li>
+            <% end %>
+          </ul>
         </section>
       </nav>
     </div>
