@@ -6,20 +6,13 @@
 
 <% end %>
 
-<% content_for :topbar do %>
-  <div class='row'>
-    <div class='large-1 small-2 columns'>
-      <a href='#' class='expand-sidebar-button btn'>>></a>
-    </div>
-    <div class='large-6 small-8 columns'>
-      <h1 class='subheader event-title'><%= @event.title %></h1>
-    </div>
-    <div class='large-6 small-2 columns'>
-      <%= link_to '+', '#', :class => 'new-plus new-idea btn' %>
-    </div>
-  </div>
+<% content_for :book_title do %>
+  <ul class='left'>
+    <li><%= @event.title %></li>
+    <li><%= link_to '+', '#', :class => 'new-plus new-idea btn' %></li>
+    <li><a href='#' class='expand-sidebar-button btn'>>></a></li>
+  </ul>
 <% end %>
-<div class='clearfix height40'></div>
 
 <% content_for :sidebar do %>
   <%= render 'idea_list' %>

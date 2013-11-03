@@ -21,7 +21,7 @@
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
     <%= javascript_include_tag "application" %>
-    <%= yield :scripts %>
+    <%= yield(:scripts) %>
   </head>
 
   <body>
@@ -32,7 +32,11 @@
           <li class='name'>
             <h1><%= link_to "Book Nodes", root_path %></h1>
           </li>
+           <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
+        <section class='top-bar-section'>
+          <%= yield :book_title %>
+        </section>
       </nav>
     </div>
 

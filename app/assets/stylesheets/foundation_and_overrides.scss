@@ -833,7 +833,7 @@ $input-font-size: 1em;
 // We use these to control border styles
 // $side-nav-divider-size: 1px;
 // $side-nav-divider-style: solid;
-// $side-nav-divider-color: darken(#fff, 10%);
+$side-nav-divider-color: black;
 
 //
 // Sub Nav Variables
@@ -971,7 +971,7 @@ $input-font-size: 1em;
 $topbar-bg: white;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 45px;
 $topbar-margin-bottom: emCalc(0px);
 
 // Control Input height for top bar
@@ -987,12 +987,12 @@ $topbar-link-color: #6f6f6f;
 // $topbar-link-font-size: emCalc(13px);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
-// $topbar-dropdown-link-color: #fff;
+$topbar-dropdown-bg: white;
+$topbar-dropdown-link-color: black;
 // $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: #fff;
+$topbar-dropdown-toggle-color: black;
 // $topbar-dropdown-toggle-alpha: 0.5;
-// $dropdown-label-color: #555;
+$dropdown-label-color: #6f6f6f;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;
@@ -1005,7 +1005,7 @@ $topbar-link-color: #6f6f6f;
 
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
-// $topbar-breakpoint: emCalc(940px); // Change to 9999px for always mobile layout
+$topbar-breakpoint: 0; // Change to 9999px for always mobile layout
 // $topbar-media-query: "only screen and (min-width "#{$topbar-breakpoint}")";
 
 
