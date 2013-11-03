@@ -27,6 +27,10 @@ body {
   font-family: 'Lato','Helvetica Neue','Arial', sans-serif;
 }
 
+.event-header {
+  background: rgb(240, 238, 238);
+}
+
 
 .metadata {
   color: $extra-light-text;
@@ -129,6 +133,7 @@ body {
   display: none;
   border-bottom: 1px solid $main-boarder;
   padding: 5px;
+  background: rgb(240, 238, 238);
 }
 
 .ideas form {
