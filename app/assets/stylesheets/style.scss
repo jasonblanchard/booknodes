@@ -49,9 +49,15 @@ body {
     border-bottom: 1px solid #aaaaaa;
     height: 45px;
   }
+
+  li.toggle-topbar.menu-icon {
+    a {
+      border-bottom: 0px;
+    }
+  }
 }
 
-.event-header {
+.topbar {
   min-height: 40px;
   border-bottom: 1px solid $main-boarder;
   background: $main-background;

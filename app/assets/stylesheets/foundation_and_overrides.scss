@@ -991,21 +991,22 @@ $topbar-dropdown-bg: white;
 $topbar-dropdown-link-color: black;
 // $topbar-dropdown-toggle-size: 5px;
 $topbar-dropdown-toggle-color: black;
-// $topbar-dropdown-toggle-alpha: 0.5;
+$topbar-dropdown-toggle-alpha: 0.5;
 $dropdown-label-color: #6f6f6f;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: emCalc(13px);
 // $topbar-menu-link-weight: bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
-// $topbar-menu-link-color-toggled: #888;
-// $topbar-menu-icon-color-toggled: #888;
+$topbar-menu-link-color: #6f6f6f;
+$topbar-menu-icon-color: #6f6f6f;
+$topbar-menu-link-color-toggled: #6f6f6f;
+$topbar-menu-icon-color-toggled: #6f6f6f;
 
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
 // $topbar-breakpoint: emCalc(940px); // Change to 9999px for always mobile layout
+$topbar-breakpoint: 0; // Change to 9999px for always mobile layout
 // $topbar-media-query: "only screen and (min-width "#{$topbar-breakpoint}")";
 
 
