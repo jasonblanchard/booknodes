@@ -27,7 +27,7 @@
   <body>
 
     <div class="fixed">
-      <nav class='top-bar'>
+      <nav class='top-bar' data-options="is_hover:false">
         <ul class='title-area'>
           <li class='name'>
             <h1><%= link_to "Book Nodes", root_path %></h1>
@@ -41,6 +41,12 @@
             <% else %>
               <li><%= link_to "Sign in with Goodreads", user_omniauth_authorize_path(:goodreads) %></li>
             <% end %>
+            <li class="has-dropdown"><a href='#'>Dropdown</a>
+              <ul class='dropdown'>
+                <li><a href='#'>asd</a></li>
+                <li><a href='#'>asdf</a></li>
+              </ul>
+            </li>
           </ul>
         </section>
       </nav>

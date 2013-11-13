@@ -19,7 +19,17 @@
 //= require rails-timeago
 //= require_tree .
 
-$(document).foundation();
+var ready = function() {
+  $(document).foundation();
+}
+
+$(ready);
+
+// Hack-around to get Foundation to re-bind topbar stuff
+$(document).on('page:load', function() {
+  $(document).foundation('off');
+  ready();
+});
 
 $(document).on('page:fetch', function() {
   $('.content').fadeOut(50);
