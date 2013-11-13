@@ -6,6 +6,18 @@
 
 <% end %>
 
+<% content_for :title do %>
+  <%= @event.title %>
+<% end %>
+
+<% content_for :header_title do %>
+  <%= link_to @event.title, book_event_path(@event) %>
+<% end %>
+
+<% content_for :header_links do %>
+  <li><%= link_to "Homepage", root_path %></li>
+<% end %>
+
 <% content_for :event_header do %>
   <div class='large-8 small-8 columns'>
     <h2><%= @event.title %></h2>
