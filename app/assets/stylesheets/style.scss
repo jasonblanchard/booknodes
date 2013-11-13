@@ -45,15 +45,15 @@ body {
 .top-bar {
   border-bottom: 1px solid #aaaaaa;
 
-  a {
-    border-bottom: 1px solid #aaaaaa;
-  }
-
   li.toggle-topbar.menu-icon {
     a {
       border-bottom: 0px;
     }
   }
+}
+
+.top-bar-section li a:not(.button) {
+  line-height: 44px;
 }
 
 .topbar {
