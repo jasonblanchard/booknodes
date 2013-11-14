@@ -45,5 +45,6 @@ $(document).on('submit', 'form.new_idea', function() {
 });
 
 $(document).on('ajax:complete', 'form.new_idea', function() {
-  $(this).find('.ajax-loader').remove();
+  $('form.new_idea').find('.ajax-loader').remove();
+  $(".new_idea input[name='commit']").removeAttr('disabled');
 });
