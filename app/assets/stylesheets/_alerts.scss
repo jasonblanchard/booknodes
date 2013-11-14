@@ -1,10 +1,5 @@
 @import "foundation/components/alert-boxes";
 
-.flash {
-  margin-top: 45px;
-  margin-bottom: -45px; // Pulls up main content
-}
-
 .flash-message {
   @include alert(#76CA7D);
 
