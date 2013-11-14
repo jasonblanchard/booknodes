@@ -2,6 +2,10 @@
   <%= @event.title %>
 <% end %>
 
+<% content_for :header_title do %>
+  <%= link_to @event.title, book_event_path(@event) %>
+<% end %>
+
 <div class='event-actions'>
   <%= link_to '+', '#', :class => 'new-plus new-idea btn' %>
   <a href='#' class='expand-sidebar-button btn'>>></a>
