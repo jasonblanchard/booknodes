@@ -12,29 +12,38 @@ $(document).on('click.ideaEvents', 'a.expand-sidebar-button', function() {
 // Also change in css
 
 
-  $(document).on('click', '.idea', function() {
-   $(this).find('.edit-button').attr('visibility','visible');
- });
+$(document).on('click', '.idea', function() {
+ $(this).find('.edit-button').attr('visibility','visible');
+});
 
-  $(document).on('dblclick', '.idea', function() {
-    $('.idea').removeClass('editing');
-    $(this).addClass('editing')
-  });
+$(document).on('dblclick', '.idea', function() {
+  $('.idea').removeClass('editing');
+  $(this).addClass('editing')
+});
 
-  $(document).on('click', '.cancel-idea-update-form', function() {
-    $('.idea').removeClass('editing');
-    return false;
-  });
+$(document).on('click', '.cancel-idea-update-form', function() {
+  $('.idea').removeClass('editing');
+  return false;
+});
 
-  $(document).on('click', '.edit-button', function() {
-    $('.idea').removeClass('editing');
-    $(this).closest('.idea').addClass('editing')
-    return false;
-  });
+$(document).on('click', '.edit-button', function() {
+  $('.idea').removeClass('editing');
+  $(this).closest('.idea').addClass('editing')
+  return false;
+});
 
-  $(document).on('keypress', '.idea', function(e) {
-    if (e.keyCode == 13) {
-      $(this).find("form").submit();
-      e.preventDefault();
-    }
-  });
+$(document).on('keypress', '.idea', function(e) {
+  if (e.keyCode == 13) {
+    $(this).find("form").submit();
+    e.preventDefault();
+  }
+});
+
+$(document).on('submit', 'form.new_idea', function() {
+  $(this).find("input[name='commit']").attr('disabled', 'disabled');
+  $(this).find('.actions').append("<img src='/images/loading.gif' class='ajax-loader' />");
+});
+
+$(document).on('ajax:complete', 'form.new_idea', function() {
+  $(this).find('.ajax-loader').remove();
+});
