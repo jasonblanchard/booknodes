@@ -1,31 +1,14 @@
-<% content_for :scripts do %>
-  <script>
-
-
-  </script>
-
-<% end %>
-
 <% content_for :title do %>
   <%= @event.title %>
 <% end %>
 
-<% content_for :header_title do %>
-  <%= link_to @event.title, book_event_path(@event) %>
-<% end %>
+<div class='event-actions'>
+  <%= link_to '+', '#', :class => 'new-plus new-idea btn' %>
+  <a href='#' class='expand-sidebar-button btn'>>></a>
+</div>
 
 <% content_for :header_links do %>
   <li><%= link_to "Homepage", root_path %></li>
-<% end %>
-
-<% content_for :event_header do %>
-  <div class='large-8 small-8 columns'>
-    <h2><%= @event.title %></h2>
-  </div>
-  <div class='large-4 small-4 columns'>
-    <%= link_to '+', '#', :class => 'new-plus new-idea btn' %>
-    <a href='#' class='expand-sidebar-button btn'>>></a>
-    </div>
 <% end %>
 
 <% content_for :sidebar do %>
@@ -38,7 +21,7 @@
 
 <div class='clearfix'></div>
 
-<div class='new-idea-form'>
+<div class='new-idea-form large-10 small-offset-1 columns'>
   <%= render :partial =>  'ideas/form', :locals => { :idea => @event.ideas.new } %>
 </div>
 
