@@ -16,7 +16,8 @@ class Idea
     },
     :convert_options => { :all => '-auto-orient' },
     :styles => {
-      :medium => '500x500>'
+      :medium => '500x500>',
+      :thumb => '100x100>'
     }
 
   def list_nodes

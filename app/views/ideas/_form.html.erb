@@ -3,7 +3,9 @@
     <%= f.text_area :note, :placeholder => 'Note' %>
     <%= f.text_field :nodes, :value => idea.list_nodes, :placeholder => 'Idea nodes' %>
     <%= f.text_field :page, :placeholder => 'Page number' %>
-    <%= f.label :image, "Upload a page image" %>
+    <%= f.label :image, f.object.new_record? ? "Upload a page image" : "Replace page image" %>
+    <%= image_tag idea.image.url(:thumb), :class => 'thumbnail' unless idea.image_file_name.nil? %>
+    <br />
     <%= f.file_field :image %>
   </div>
   <div class='row actions'>
