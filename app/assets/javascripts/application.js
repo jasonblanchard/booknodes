@@ -17,10 +17,20 @@
 //= require foundation
 //= require turbolinks
 //= require rails-timeago
+//= require select2
 //= require_tree .
 
 var ready = function() {
   $(document).foundation();
+  
+  // Need to re-bind this on idea update
+  $('.single-tag-select').select2({
+    width: 'element',
+    createSearchChoice:function(term) {
+      return {id:term, text:term};
+    },
+    data: [{id: 1, text: '1'},{id: 2, text: '2'},{id: 3, text: '3'}]
+  });
 }
 
 $(ready);
