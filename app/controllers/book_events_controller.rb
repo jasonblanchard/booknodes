@@ -5,6 +5,7 @@ class BookEventsController < ApplicationController
 
   def show
     @event = BookEvent.find(params[:id])
+    @last_page = 12
     
     if params[:node]
       @ideas = @event.ideas.order_by(:created_at => :desc).to_a.keep_if { |idea| idea.nodes.include?(params[:node]) }

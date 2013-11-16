@@ -1,3 +1,34 @@
+<% content_for :scripts do %>
+
+  <script>
+    $(document).ready( function() {
+      var options = [];
+
+      <% (@last_page..@last_page + 15).to_a.each do |i| %>
+        options.push({id: <%= i %>, text: '<%= i %>'});
+      <% end %>
+
+      console.log(options);
+
+      $('.single-tag-select').select2({
+        width: 'element',
+        createSearchChoice:function(term) {
+          return {id:term, text:term};
+        },
+        data: options
+      });
+
+    });
+
+    $(document).on('ajax:complete', 'form.new_idea', function() {
+      // NEed to re-bind selec2 with a new range
+      console.log('done');
+    });
+
+  </script>
+
+<% end %>
+
 <% content_for :title do %>
   <%= @event.title %>
 <% end %>
