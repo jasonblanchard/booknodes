@@ -13,6 +13,8 @@ class IdeasController < ApplicationController
     @event = BookEvent.find(params[:book_event_id])
     @idea = @event.ideas.new(idea_params)
     @idea_list = @event.all_idea_nodes
+    # TODO: Method to pull this out
+    @last_page = 25
 
     if @idea.save
 
