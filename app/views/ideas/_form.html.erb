@@ -3,7 +3,6 @@
     <%= f.text_area :note, :placeholder => 'Note' %>
     <%= f.text_field :nodes, :value => idea.list_nodes, :placeholder => 'Idea nodes' %>
     <% if f.object.new_record? %>
-      <%= f.label :page %>
       <%= f.hidden_field :page, :class => 'select2-single-select' %>
       <br />
       <br />
