@@ -11,7 +11,7 @@ $('#<%= dom_id(@idea) %>').effect('highlight', {color:'#c96a46'});
 // Update the select2 page list
 $('.select2-single-select').select2('destroy');
 var dataOptions = [];
-<% (@last_page..@last_page + 15).to_a.each do |i| %>
+<% @page_range.to_a.each do |i| %>
   dataOptions.push({id: <%= i %>, text: '<%= i %>'});
 <% end %>
 

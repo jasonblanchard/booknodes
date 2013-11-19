@@ -10,6 +10,16 @@ module Ideaable
     sorted_idea_nodes
   end
 
+  def last_idea_page_number
+    ideas.last.page.nil? ? nil : ideas.last.page
+  end
+
+  def new_page_range
+    return [] if last_idea_page_number.nil?
+
+    (last_idea_page_number..last_idea_page_number + 10).to_a
+  end
+
   private
 
   def get_all_idea_nodes_with_count

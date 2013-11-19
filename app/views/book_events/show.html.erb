@@ -4,10 +4,11 @@
     $(document).ready( function() {
       var dataOptions = [];
 
-      <% (@last_page..@last_page + 15).to_a.each do |i| %>
+      <% @page_range.each do |i| %>
         dataOptions.push({id: <%= i %>, text: '<%= i %>'});
       <% end %>
 
+      console.log(dataOptions);
       select2SingleSelect(dataOptions); 
 
     });

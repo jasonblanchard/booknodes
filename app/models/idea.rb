@@ -20,6 +20,8 @@ class Idea
       :thumb => '100x100>'
     }
 
+  validates :page, numericality: { only_integer: true }
+
   def list_nodes
     nodes.join(', ') unless nodes.nil?
   end
