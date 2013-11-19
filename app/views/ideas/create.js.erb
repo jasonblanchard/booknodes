@@ -1,5 +1,18 @@
 $('.ideas').prepend("<%= escape_javascript( render(@idea)) %>");
 $('#new_idea')[0].reset();
 $('.new-idea-form').slideToggle('fast');
+
+// Update page list
 $('.idea-list').replaceWith("<%= escape_javascript( render :partial => 'book_events/idea_list') %>");
+
+// Highlight the new idea
 $('#<%= dom_id(@idea) %>').effect('highlight', {color:'#c96a46'});
+
+// Update the select2 page list
+$('.select2-single-select').select2('destroy');
+var dataOptions = [];
+<% @page_range.to_a.each do |i| %>
+  dataOptions.push({id: <%= i %>, text: '<%= i %>'});
+<% end %>
+
+select2SingleSelect(dataOptions); 

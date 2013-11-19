@@ -13,6 +13,7 @@ class IdeasController < ApplicationController
     @event = BookEvent.find(params[:book_event_id])
     @idea = @event.ideas.new(idea_params)
     @idea_list = @event.all_idea_nodes
+    @page_range = @event.new_page_range
 
     if @idea.save
 
@@ -22,6 +23,8 @@ class IdeasController < ApplicationController
       end
     
     end
+    
+    # TODO: Add a fail_create JS action
 
   end
 

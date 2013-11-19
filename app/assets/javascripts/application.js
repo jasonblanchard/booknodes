@@ -17,6 +17,7 @@
 //= require foundation
 //= require turbolinks
 //= require rails-timeago
+//= require select2
 //= require_tree .
 
 var ready = function() {
