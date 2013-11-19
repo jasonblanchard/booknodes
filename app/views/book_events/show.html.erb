@@ -8,7 +8,18 @@
         dataOptions.push({id: <%= i %>, text: '<%= i %>'});
       <% end %>
 
-      console.log(dataOptions);
+      select2SingleSelect(dataOptions); 
+
+    });
+
+    <% #TODO: DRY this up with a function %>
+    $(document).on('page:load', function() {
+      var dataOptions = [];
+
+      <% @page_range.each do |i| %>
+        dataOptions.push({id: <%= i %>, text: '<%= i %>'});
+      <% end %>
+
       select2SingleSelect(dataOptions); 
 
     });
