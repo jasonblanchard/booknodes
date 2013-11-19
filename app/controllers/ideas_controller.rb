@@ -23,6 +23,8 @@ class IdeasController < ApplicationController
       end
     
     end
+    
+    # TODO: Add a fail_create JS action
 
   end
 

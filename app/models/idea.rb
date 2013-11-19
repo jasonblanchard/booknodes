@@ -7,6 +7,9 @@ class Idea
   field :nodes, type: Array
   field :page, type: Integer
   embedded_in :book_event
+
+  validates :page, numericality: { only_integer: true, :allow_nil => true }
+  
   has_mongoid_attached_file :image,
     :storage => :s3,
     :bucket => ENV['BUCKET'],
@@ -19,8 +22,6 @@ class Idea
       :medium => '500x500>',
       :thumb => '100x100>'
     }
-
-  validates :page, numericality: { only_integer: true }
 
   def list_nodes
     nodes.join(', ') unless nodes.nil?
