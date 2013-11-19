@@ -1,7 +1,7 @@
 function select2SingleSelect(dataOptions) {
 
   $('.select2-single-select').select2({
-    width: '10%',
+    width: '90px',
     createSearchChoice:function(term) {
       return {id:term, text:term};
     },
