@@ -30,5 +30,12 @@ describe Ideaable do
       event.new_page_range.should eq []
     end
   end
+
+  describe '#idea_nodes' do
+
+    it 'returns an array of unique idea nodes' do
+      event.idea_nodes.should eq ['cats','dogs']
+    end
+  end
   
 end

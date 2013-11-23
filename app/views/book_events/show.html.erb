@@ -2,26 +2,36 @@
 
   <script>
     $(document).ready( function() {
-      var dataOptions = [];
+      var pageOptions = [];
+      var nodeOptions = [];
 
       <% @page_range.each do |i| %>
-        dataOptions.push({id: <%= i %>, text: '<%= i %>'});
+        pageOptions.push({id: <%= i %>, text: '<%= i %>'});
+      <% end %>
+      
+      <% @node_list.each do |node| %>
+        nodeOptions.push('<%= node %>');
       <% end %>
 
-      select2SingleSelect(dataOptions); 
-
+      select2SingleSelect(pageOptions); 
+      select2TagSelect(nodeOptions);
     });
 
     <% #TODO: DRY this up with a function %>
     $(document).on('page:load', function() {
-      var dataOptions = [];
+      var pageOptions = [];
+      var nodeOptions = [];
 
       <% @page_range.each do |i| %>
-        dataOptions.push({id: <%= i %>, text: '<%= i %>'});
+        pageOptions.push({id: <%= i %>, text: '<%= i %>'});
+      <% end %>
+      
+      <% @node_list.each do |node| %>
+        nodeOptions.push('<%= node %>');
       <% end %>
 
-      select2SingleSelect(dataOptions); 
-
+      select2SingleSelect(pageOptions); 
+      select2TagSelect(nodeOptions);
     });
 
   </script>

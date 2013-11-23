@@ -14,6 +14,7 @@ class IdeasController < ApplicationController
     @idea = @event.ideas.new(idea_params)
     @idea_list = @event.all_idea_nodes
     @page_range = @event.new_page_range
+    @node_list = @event.idea_nodes
 
     if @idea.save
 

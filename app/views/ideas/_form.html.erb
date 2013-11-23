@@ -1,7 +1,9 @@
 <%= form_for([@event, idea], :remote => true, :html => { :multipart => true }) do |f| %>
   <div class='row'>
     <%= f.text_area :note, :placeholder => 'Note' %>
-    <%= f.text_field :nodes, :value => idea.list_nodes, :placeholder => 'Idea nodes' %>
+    <%= f.hidden_field :nodes, :value => idea.list_nodes, :placeholder => 'Idea nodes', :class => 'select2-tag-select' %>
+    <br />
+    <br />
     <% if f.object.new_record? %>
       <%= f.hidden_field :page, :class => 'select2-single-select' %>
       <br />
