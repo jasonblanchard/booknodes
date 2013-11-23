@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Ideaable do
   
   let(:event) { FactoryGirl.create(:book_event_with_ideas) }
+  let(:new_event) { FactoryGirl.create(:book_event) }
   
   describe '#last_idea_page_number' do
 
@@ -14,6 +15,10 @@ describe Ideaable do
 
     it 'returns something else if the last idea does not have a page number' do
       event.last_idea_page_number.should eq nil
+    end
+    
+    it 'returns nil if book event has no ideas' do
+      new_event.last_idea_page_number.should eq nil
     end
 
   end

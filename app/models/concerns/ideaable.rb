@@ -12,7 +12,11 @@ module Ideaable
   end
 
   def last_idea_page_number
-    ideas.last.page.nil? ? nil : ideas.last.page
+    if ideas.last
+      ideas.last.page.nil? ? nil : ideas.last.page
+    else
+      nil
+    end
   end
 
   def new_page_range
