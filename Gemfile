@@ -39,14 +39,13 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'debugger'
 end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
-gem 'debugger'
 
 
 # Use ActiveModel has_secure_password
