@@ -17,7 +17,7 @@ module Ideaable
   def new_page_range
     return [] if last_idea_page_number.nil?
 
-    (last_idea_page_number..last_idea_page_number + 10).to_a
+    (last_idea_page_number..last_idea_page_number + 20).to_a
   end
 
   private
