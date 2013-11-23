@@ -28,7 +28,7 @@ describe Ideaable do
     it 'returns a new page range based on the last idea' do
       event.ideas.last.page = 10
 
-      event.new_page_range.should =~ [10,11,12,13,14,15,16,17,18,19,20]
+      event.new_page_range.should =~ (10..30).to_a
     end
 
     it 'returns an empty array if the last idea does not have a page number' do
