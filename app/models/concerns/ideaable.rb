@@ -6,6 +6,7 @@ module Ideaable
     index "ideas.nodes" => 1
   end
 
+  # TODO: Rename this method
   def all_idea_nodes
     sorted_idea_nodes
   end
@@ -18,6 +19,10 @@ module Ideaable
     return [] if last_idea_page_number.nil?
 
     (last_idea_page_number..last_idea_page_number + 20).to_a
+  end
+
+  def idea_nodes
+    ideas.map(&:nodes).flatten.uniq
   end
 
   private

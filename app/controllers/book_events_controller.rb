@@ -14,6 +14,7 @@ class BookEventsController < ApplicationController
     end
 
     @idea_list = @event.all_idea_nodes
+    @node_list = @event.idea_nodes
   end
 
   def new
