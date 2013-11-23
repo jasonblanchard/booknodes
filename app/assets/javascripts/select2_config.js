@@ -25,6 +25,7 @@ function select2TagSelect(dataOptions) {
 
   $('.select2-tag-select').select2({
     tags: dataOptions,
-    width: '100%'
+    width: '100%',
+    tokenSeparators: [","]
   })
 }
