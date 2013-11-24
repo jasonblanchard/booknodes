@@ -1,5 +1,10 @@
 language: ruby
 rvm:
-  - "2.0.0"
+- 2.0.0
 services: mongodb
 script: bundle exec rspec spec
+deploy:
+  provider: heroku
+  app: booknodes
+  api_key:
+    secure: C6aZnET24dCa8w0xVgHKNlgrQ1bPBOWJrxpc8siawCQg+2ynBmYmrw2CBwd9Fo5krzkLKvchCAcxkTnW7p7xonnRdxZhMO2giHPE2Qsb9jJxmIg9yW2Z9akq3Seg2AqzC4yhNGqkkAaZFZkMBu9nCTnTwtaVxNrp7iDTtctd1nQ=
