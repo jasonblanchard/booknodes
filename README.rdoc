@@ -1,4 +1,5 @@
 == BookNotes
+{<img src="https://travis-ci.org/jasonblanchard/booknotes.png?branch=master" alt="Build Status" />}[https://travis-ci.org/jasonblanchard/booknotes]
 
 A little experiment with Rails 4 and MongoDB
 
