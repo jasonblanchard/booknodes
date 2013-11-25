@@ -40,6 +40,7 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'debugger'
+  gem 'simplecov', :require => false
 end
 
 group :doc do
