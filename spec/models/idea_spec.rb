@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe Idea do
+
+  it { should validate_numericality_of :page }
+
   it 'can be created' do
     idea = FactoryGirl.build(:idea)
     idea.should be_a(Idea)

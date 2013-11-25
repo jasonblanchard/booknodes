@@ -41,6 +41,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'debugger'
   gem 'simplecov', :require => false
+  gem 'shoulda-matchers'
 end
 
 group :doc do
