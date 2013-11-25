@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Ideaable do
   
-  let(:event) { FactoryGirl.create(:book_event_with_ideas) }
-  let(:new_event) { FactoryGirl.create(:book_event) }
+  let(:event) { FactoryGirl.build(:book_event_with_ideas) }
+  let(:new_event) { FactoryGirl.build(:book_event) }
 
   describe '#tallied_idea_nodes' do
     it 'returns a list of ideas with frequency numbers' do

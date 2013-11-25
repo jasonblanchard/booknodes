@@ -7,7 +7,7 @@ module Ideaable
   end
 
   def tallied_idea_nodes
-    sorted_idea_nodes
+    sort_idea_nodes
   end
 
   def last_idea_page_number
@@ -37,7 +37,7 @@ module Ideaable
     end
   end
 
-  def sorted_idea_nodes
+  def sort_idea_nodes
     Hash[*get_all_idea_nodes_with_count.sort_by { |k,v| k }.flatten]
   end
 
