@@ -20,7 +20,7 @@ function select2SingleSelect(dataOptions) {
 
 function select2TagSelect(dataOptions) {
 
-  $('.select2-tag-select').select2('data','');
+  $('.new_idea .select2-tag-select').select2('data','');
   $('.select2-tag-select').select2('destroy');
 
   $('.select2-tag-select').select2({
