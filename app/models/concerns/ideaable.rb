@@ -6,8 +6,7 @@ module Ideaable
     index "ideas.nodes" => 1
   end
 
-  # TODO: Rename this method
-  def all_idea_nodes
+  def tallied_idea_nodes
     sorted_idea_nodes
   end
 

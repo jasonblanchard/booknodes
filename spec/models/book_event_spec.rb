@@ -9,10 +9,4 @@ describe BookEvent do
     FactoryGirl.create(:book_event).should be_a(BookEvent)
   end
 
-  it 'returns a list of idea nodes with frequency numbers' do
-    event = FactoryGirl.create(:book_event_with_ideas)
-    
-    event.all_idea_nodes.should eq({"cats"=>2, "dogs"=>1})
-
-  end
 end

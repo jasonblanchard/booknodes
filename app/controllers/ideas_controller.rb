@@ -12,7 +12,7 @@ class IdeasController < ApplicationController
   def create
     @event = BookEvent.find(params[:book_event_id])
     @idea = @event.ideas.new(idea_params)
-    @idea_list = @event.all_idea_nodes
+    @idea_list = @event.tallied_idea_nodes
     @page_range = @event.new_page_range
     @node_list = @event.idea_nodes
 
@@ -35,7 +35,7 @@ class IdeasController < ApplicationController
 
     @idea.update_attributes(idea_params)
 
-    @idea_list = @event.all_idea_nodes
+    @idea_list = @event.tallied_idea_nodes
 
     if @idea.save
       respond_to do |format|

@@ -13,7 +13,7 @@ class BookEventsController < ApplicationController
       @ideas = @event.ideas.order_by(:created_at => :desc).to_a
     end
 
-    @idea_list = @event.all_idea_nodes
+    @idea_list = @event.tallied_idea_nodes
     @node_list = @event.idea_nodes
   end
 

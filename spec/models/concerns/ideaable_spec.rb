@@ -4,6 +4,13 @@ describe Ideaable do
   
   let(:event) { FactoryGirl.create(:book_event_with_ideas) }
   let(:new_event) { FactoryGirl.create(:book_event) }
+
+  describe '#tallied_idea_nodes' do
+    it 'returns a list of ideas with frequency numbers' do
+      event = FactoryGirl.create(:book_event_with_ideas)
+      event.tallied_idea_nodes.should eq({"cats"=>2, "dogs"=>1})
+    end
+  end
   
   describe '#last_idea_page_number' do
 
