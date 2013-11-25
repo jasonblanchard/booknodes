@@ -31,6 +31,7 @@ class Idea
     nodes.split(',').map { |v| v.strip.downcase }
   end
 
+  # TODO: Add hashtag syntax
   def self.split_nodes_from_note(string)
     string.scan(/{(.*?)}/).flatten.map { |v| v.strip.downcase }
   end
