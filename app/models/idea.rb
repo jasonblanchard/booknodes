@@ -32,12 +32,23 @@ class Idea
   end
 
   # TODO: Add hashtag syntax
+  # regex something like /#(\w+)/
   def self.split_nodes_from_note(string)
-    string.scan(/{(.*?)}/).flatten.map { |v| v.strip.downcase }
+    nodes_from_curly_bracket(string) + nodes_from_hashtag(string)
   end
 
   def self.remove_node_delimiter(string)
-    string.gsub(/{|}/, '')
+    string.gsub(/{|}/, '').gsub(/#/, '')
+  end
+
+  private
+
+  def self.nodes_from_curly_bracket(string)
+    string.scan(/{(.*?)}/).flatten.map { |v| v.strip.downcase }
+  end
+
+  def self.nodes_from_hashtag(string)
+    string.scan(/#(\w+)/).flatten.map { |v| v.strip.downcase }
   end
 
 end
