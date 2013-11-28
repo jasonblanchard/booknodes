@@ -73,3 +73,6 @@ gem 'omniauth-goodreads', require: 'omniauth-goodreads'
 gem 'multi_xml'
 gem 'omniauth-oauth'
 gem "select2-rails"
+
+'Pagination'
+gem 'kaminari'

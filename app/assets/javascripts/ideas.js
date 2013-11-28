@@ -8,9 +8,6 @@ $(document).on('click.ideaEvents', 'a.expand-sidebar-button', function() {
   return false;
 });
 
-// TODO: Change show() to attr('visibility', 'visible')
-// Also change in css
-
 
 $(document).on('click', '.idea', function() {
  $(this).find('.edit-button').attr('visibility','visible');

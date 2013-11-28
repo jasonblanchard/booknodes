@@ -8,9 +8,9 @@ class BookEventsController < ApplicationController
     @page_range = @event.new_page_range
     
     if params[:node]
-      @ideas = @event.ideas.order_by(:created_at => :desc).to_a.keep_if { |idea| idea.nodes.include?(params[:node]) }
+      @ideas = @event.ideas.recent.with_node(params[:node]).page(params[:page])
     else
-      @ideas = @event.ideas.order_by(:created_at => :desc).to_a
+      @ideas = @event.ideas.recent.page(params[:page])
     end
 
     @idea_list = @event.tallied_idea_nodes

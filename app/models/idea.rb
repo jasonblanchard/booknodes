@@ -2,13 +2,16 @@ class Idea
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Paperclip
-  
+
   field :note
   field :nodes, type: Array
   field :page, type: Integer
   embedded_in :book_event
 
   validates :page, numericality: { only_integer: true, :allow_nil => true }
+
+  scope :with_node, lambda { |node| where :nodes => node }
+  scope :recent, lambda { order_by(:created_at => :desc) }
   
   has_mongoid_attached_file :image,
     :storage => :s3,
@@ -31,8 +34,6 @@ class Idea
     nodes.split(',').map { |v| v.strip.downcase }
   end
 
-  # TODO: Add hashtag syntax
-  # regex something like /#(\w+)/
   def self.split_nodes_from_note(string)
     nodes_from_curly_bracket(string) + nodes_from_hashtag(string)
   end

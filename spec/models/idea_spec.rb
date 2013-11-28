@@ -11,6 +11,23 @@ describe Idea do
     idea.book_event.user.should be_a(User)
   end
 
+  describe 'with_node(node) scope' do
+
+    let!(:event) { FactoryGirl.create(:book_event_with_ideas) }
+
+    it 'finds ideas with a specific idea node' do
+      results = event.ideas.with_node('dogs')
+
+      results.each do |result|
+        result.nodes.should include 'dogs'
+      end
+    end
+
+    it 'returns empty array if there are no results' do
+      event.ideas.with_node('nonsense').should be_empty
+    end
+  end
+
   describe '#list_nodes' do
 
     it 'displays a list of uniq idea nodes' do
