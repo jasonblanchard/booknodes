@@ -39,7 +39,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'debugger'
+  # gem 'debugger'
   gem 'simplecov', :require => false
   gem 'shoulda-matchers'
 end
