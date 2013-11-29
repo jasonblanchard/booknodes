@@ -45,3 +45,7 @@ $(document).on('ajax:complete', 'form.new_idea', function() {
   $('form.new_idea').find('.ajax-loader').remove();
   $(".new_idea input[name='commit']").removeAttr('disabled');
 });
+
+$(document).on('click', '.idea-list .idea-node', function() {
+  $('.mobile.sidebar').hide();
+});

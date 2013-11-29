@@ -45,6 +45,3 @@ $(document).on('page:restore', function() {
   $('.content').fadeIn(50);
   $('.processing').hide();
 });
-
-
-// $('.content').html("<img src='/images/loading.gif' class='loader' />");
