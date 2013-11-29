@@ -15,7 +15,9 @@ $(document).on('click', '.idea', function() {
 
 $(document).on('dblclick', '.idea', function() {
   $('.idea').removeClass('editing');
-  $(this).addClass('editing')
+  $(this).addClass('editing');
+  // TODO: Only call if form isn't already rendered
+  $.get('/book_events/' + $(this).data('event') + '/ideas/' + $(this).data('idea') + '/edit');
 });
 
 $(document).on('click', '.cancel-idea-update-form', function() {
@@ -26,6 +28,8 @@ $(document).on('click', '.cancel-idea-update-form', function() {
 $(document).on('click', '.edit-button', function() {
   $('.idea').removeClass('editing');
   $(this).closest('.idea').addClass('editing')
+  var idea = $(this).closest('.idea');
+  $.get('/book_events/' + $(idea).data('event') + '/ideas/' + $(idea).data('idea') + '/edit');
   return false;
 });
 

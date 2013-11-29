@@ -1,4 +1,4 @@
-<%= div_for(idea) do |i| %>
+<%= div_for(idea, 'data-event' => idea.book_event.id, 'data-idea' => idea.id) do |i| %>
   <span class='idea-content show'>
     <div class='row'>
       <div class='large-4 small-8 large-offset-8 small-offset-4 columns metadata text-align-right'>
