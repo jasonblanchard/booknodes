@@ -34,6 +34,7 @@ $(document).on('page:load', function() {
 
 $(document).on('page:fetch', function() {
   $('.content').fadeOut(50);
+  $('.processing').show();
 });
 
 $(document).on('page:change', function() {
@@ -42,6 +43,7 @@ $(document).on('page:change', function() {
 
 $(document).on('page:restore', function() {
   $('.content').fadeIn(50);
+  $('.processing').hide();
 });
 
 
