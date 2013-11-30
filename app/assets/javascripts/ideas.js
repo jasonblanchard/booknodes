@@ -13,11 +13,14 @@ $(document).on('click', '.idea', function() {
  $(this).find('.edit-button').attr('visibility','visible');
 });
 
+// TODO: Refactor to DRY up this form situation
 $(document).on('dblclick', '.idea', function() {
   $('.idea').removeClass('editing');
-  $(this).addClass('editing');
-  // TODO: Only call if form isn't already rendered
-  $.get('/book_events/' + $(this).data('event') + '/ideas/' + $(this).data('idea') + '/edit');
+  if ( $(this).find('form').length > 0 ) {
+    $(this).addClass('editing');
+  } else {
+    $.get('/book_events/' + $(this).data('event') + '/ideas/' + $(this).data('idea') + '/edit');
+  }
 });
 
 $(document).on('click', '.cancel-idea-update-form', function() {
@@ -27,9 +30,12 @@ $(document).on('click', '.cancel-idea-update-form', function() {
 
 $(document).on('click', '.edit-button', function() {
   $('.idea').removeClass('editing');
-  $(this).closest('.idea').addClass('editing')
   var idea = $(this).closest('.idea');
-  $.get('/book_events/' + $(idea).data('event') + '/ideas/' + $(idea).data('idea') + '/edit');
+  if ( $(idea).find('form').length > 0 ) {
+    $(idea).addClass('editing');
+  } else {
+    $.get('/book_events/' + $(idea).data('event') + '/ideas/' + $(idea).data('idea') + '/edit');
+  }
   return false;
 });
 

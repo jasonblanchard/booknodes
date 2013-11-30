@@ -1,1 +1,2 @@
+$('#idea_<%= @idea.id %>').addClass('editing');
 $('#idea_<%= @idea.id %>').append('<%= escape_javascript render(:file => 'ideas/_form', :locals => {:idea => @idea}) %>');
