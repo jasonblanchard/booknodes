@@ -9,6 +9,15 @@ class IdeasController < ApplicationController
     @event = BookEvent.find(params[:book_event_id])
   end
 
+  def edit
+    @event = BookEvent.find(params[:book_event_id])
+    @idea = @event.ideas.find(params[:id])
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def create
     @event = BookEvent.find(params[:book_event_id])
     @idea = @event.ideas.new(idea_params)
