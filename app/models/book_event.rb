@@ -6,4 +6,6 @@ class BookEvent
   field :title
   belongs_to :user
 
+  scope :recent, lambda { order_by(:created_at => :desc) }
+
 end

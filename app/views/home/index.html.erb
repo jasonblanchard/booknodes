@@ -1,11 +1,14 @@
-<div class='large-12 columns'>
-  <% if @events %>
-    <%= div_for @events do |event| %>
-      <%= link_to event.title, event  %>
+<% if user_signed_in? %>
+  <div class='book-list'>
+    <% if @events %>
+      <ul class='small-block-grid-1 medium-block-grid-2 large-block-grid-5'>
+        <% @events.each do |event| %>
+          <li class='event'><strong><%= link_to event.title, event  %></strong></li>
+        <% end %>
+      </ul>
     <% end %>
-  <% end %>
-  <% if user_signed_in? %>
-    <%= link_to '+', new_book_event_path, :class => 'new-plus btn' %>
-  <% end %>
 
-</div>
+    <%= link_to '+', new_book_event_path, :class => 'new-plus btn' %>
+  </div>
+
+<% end %>
