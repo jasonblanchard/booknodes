@@ -14,18 +14,17 @@ $(document).on('click', '.idea', function() {
 });
 
 // TODO: Refactor to DRY up this form situation
+// so it works on dblclick and on .edit-button click
 $(document).on('dblclick', '.idea', function() {
   $('.idea').removeClass('editing');
   if ( $(this).find('form').length > 0 ) {
     $(this).addClass('editing');
   } else {
-    $.get('/book_events/' + $(this).data('event') + '/ideas/' + $(this).data('idea') + '/edit');
+    $.get('/book_events/' + $(this).data('event') + '/ideas/' + $(this).data('idea') + '/edit', function() {
+      // TODO: Pull in the tags by ajax
+      select2TagSelect([]); 
+    });
   }
-});
-
-$(document).on('click', '.cancel-idea-update-form', function() {
-  $('.idea').removeClass('editing');
-  return false;
 });
 
 $(document).on('click', '.edit-button', function() {
@@ -34,8 +33,15 @@ $(document).on('click', '.edit-button', function() {
   if ( $(idea).find('form').length > 0 ) {
     $(idea).addClass('editing');
   } else {
-    $.get('/book_events/' + $(idea).data('event') + '/ideas/' + $(idea).data('idea') + '/edit');
+    $.get('/book_events/' + $(idea).data('event') + '/ideas/' + $(idea).data('idea') + '/edit', function() {
+      select2TagSelect([]);
+    });
   }
+  return false;
+});
+
+$(document).on('click', '.cancel-idea-update-form', function() {
+  $('.idea').removeClass('editing');
   return false;
 });
 
