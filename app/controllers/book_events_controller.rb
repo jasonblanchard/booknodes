@@ -31,6 +31,17 @@ class BookEventsController < ApplicationController
     redirect_to root_path
   end
 
+  def idea_nodes
+    @event = BookEvent.find(params[:id])
+    @nodes = @event.idea_nodes
+
+    if @event
+      respond_to do |format|
+        format.json { render :json => @nodes }
+      end
+    end
+  end
+
   private
 
   def book_event_params

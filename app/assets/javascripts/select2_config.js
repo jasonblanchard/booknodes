@@ -24,7 +24,22 @@ function select2TagSelect(dataOptions) {
   $('.select2-tag-select').select2('destroy');
 
   $('.select2-tag-select').select2({
-    tags: dataOptions,
+    tags: true,
+    ajax: {
+      url: '/book_events/523782381e73b5a6ab000002/idea_nodes.json',
+      dataType: 'json',
+      quietMillis: 100,
+      results: function(data, page) {
+        var results = [];
+        $.each(data, function(index, item) {
+          results.push({
+            id: item,
+            text: item,
+          });
+        });
+        return { results: results };
+      }
+    },
     width: '100%',
     tokenSeparators: [","]
   })
