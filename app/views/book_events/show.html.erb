@@ -47,7 +47,9 @@
 <% end %>
 
 <div class='event-actions'>
-  <%= link_to '+', '#', :class => 'new-plus new-idea btn' %>
+  <% if can? :update, @event %>
+    <%= link_to '+', '#', :class => 'new-plus new-idea btn' %>
+  <% end %>
   <a href='#' class='expand-sidebar-button btn'>>></a>
 </div>
 

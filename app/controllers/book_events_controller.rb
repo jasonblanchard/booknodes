@@ -26,6 +26,8 @@ class BookEventsController < ApplicationController
   def create
     @event = current_user.book_events.new(book_event_params)
 
+     authorize! :create, @event
+
     @event.save
 
     redirect_to root_path
