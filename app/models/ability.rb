@@ -1,6 +1,8 @@
 class Ability
   include CanCan::Ability
 
+  #TODO: Add functional tests for book events
+
   def initialize(user)
     user ||= User.new # guest user (not logged in)
 
