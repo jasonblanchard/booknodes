@@ -22,6 +22,7 @@ describe IdeasController do
     end
 
     it 'increases the ideas by 1' do
+      sign_in(@event.user)
 
       expect { post :create, "idea"=>{"note"=>"testing", "nodes"=>"catdog, wallaby"}, "book_event_id" => @event.id }.to change{BookEvent.find(@event.id).ideas.count}.by(1)
       
@@ -51,6 +52,8 @@ describe IdeasController do
     end
 
     it 'should update the values' do
+      sign_in(@event.user)
+
       put :update, 'idea' => {'note' => 'Cats are wonderful', 'nodes' => 'cats, bears' }, 'book_event_id' => @event.id, 'id'=> @idea.id
 
       idea = @event.ideas.find(@idea.id)
@@ -64,6 +67,8 @@ describe IdeasController do
   describe 'delete' do
 
     it 'should delete an idea' do
+
+      sign_in(@event.user)
 
       expect { delete :destroy, :book_event_id => @event.id, :id => @event.ideas[0].id }.to change{BookEvent.find(@event.id).ideas.count}.by(-1)
 

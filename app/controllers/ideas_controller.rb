@@ -26,6 +26,8 @@ class IdeasController < ApplicationController
     @page_range = @event.new_page_range
     @node_list = @event.idea_nodes
 
+    authorize! :create, @idea
+
     if @idea.save
 
       respond_to do |format|
@@ -43,10 +45,11 @@ class IdeasController < ApplicationController
     @event = BookEvent.find(params[:book_event_id])
     @idea = @event.ideas.find(params[:id])
 
+    authorize! :update, @idea
+
     @idea.update_attributes(idea_params)
 
     @idea_list = @event.tallied_idea_nodes
-
     if @idea.save
       respond_to do |format|
         format.html { redirect_to @event }
@@ -59,6 +62,8 @@ class IdeasController < ApplicationController
   def destroy
     @event = BookEvent.find(params[:book_event_id])
     @idea = @event.ideas.find(params[:id])
+
+    authorize! :destroy, @idea
 
     if @idea.destroy
       respond_to do |format|
