@@ -6,7 +6,7 @@
   <ul>
     <li class='idea-node'><%= link_to 'All', book_event_path(@event) %></li>
     <% @idea_list.each do |idea,number| %>
-      <li class='idea-node'><%= link_to raw("#{idea} <span class='info'>(#{number})</span>"), idea_filter_path(@event, idea)  %></li>
+      <li class='idea-node'><%= link_to raw("#{idea} <span class='info'>(#{number})</span>"), idea_filter_book_event_path(@event, url_encode(idea))  %></li>
     <% end %>
   </ul>
 </div>

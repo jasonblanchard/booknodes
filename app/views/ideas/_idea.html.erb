@@ -1,4 +1,4 @@
-<%= div_for(idea, 'data-event' => idea.book_event.id, 'data-idea' => idea.id) do |i| %>
+<%= div_for(idea, 'data-event' => idea.book_event.id, 'data-idea' => idea.id, :class => (can?(:update, idea) ? 'editable' : '')) do |i| %>
   <span class='idea-content show'>
     <div class='row'>
       <div class='large-4 small-8 large-offset-8 small-offset-4 columns metadata text-align-right'>
@@ -11,7 +11,9 @@
         <p><%= simple_format i.note %></p>
       </div>
       <div class='large-1 small-1 columns idea-actions'>
-        <button class='edit-button'>...</button>
+        <% if can? :update, idea %>
+          <button class='edit-button'>...</button>
+        <% end %>
       </div>
     </div>
 

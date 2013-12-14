@@ -15,7 +15,7 @@ $(document).on('click', '.idea', function() {
 
 // TODO: Refactor to DRY up this form situation
 // so it works on dblclick and on .edit-button click
-$(document).on('dblclick', '.idea', function() {
+$(document).on('dblclick', '.idea.editable', function() {
   $('.idea').removeClass('editing');
   if ( $(this).find('form').length > 0 ) {
     $(this).addClass('editing');

@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :check_email_param, :if => :user_signed_in?
 
+  rescue_from CanCan::AccessDenied do |exception|
+    render :nothing => true, :status => :forbidden
+  end
+
   private
 
   def check_email_param
