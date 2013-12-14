@@ -10,7 +10,9 @@ module Ideaable
     sort_idea_nodes
   end
 
+  
   def last_idea_page_number
+    # TODO: Refactor this to grab the last idea with a page number
     if ideas.last
       ideas.last.page.nil? ? nil : ideas.last.page
     else
@@ -18,6 +20,7 @@ module Ideaable
     end
   end
 
+  # TODO: Create a JSON action and route for this
   def new_page_range
     return [] if last_idea_page_number.nil?
 
