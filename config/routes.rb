@@ -10,8 +10,8 @@ Booknotes::Application.routes.draw do
     resources :ideas
     member do
       get 'idea_nodes'
-      get ':node', :on => :member, :action => 'show', :as => 'idea_filter'
     end
+    get ':node', :on => :member, :action => 'show', :as => 'idea_filter'
   end
 
 
