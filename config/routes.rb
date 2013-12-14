@@ -8,6 +8,9 @@ Booknotes::Application.routes.draw do
 
   resources :book_events do
     resources :ideas
+    member do
+      get 'idea_nodes'
+    end
     get ':node', :on => :member, :action => 'show', :as => 'idea_filter'
   end
 

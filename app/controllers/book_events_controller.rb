@@ -14,7 +14,6 @@ class BookEventsController < ApplicationController
     end
 
     @idea_list = @event.tallied_idea_nodes
-    @node_list = @event.idea_nodes
   end
 
   def new
@@ -31,6 +30,17 @@ class BookEventsController < ApplicationController
     @event.save
 
     redirect_to root_path
+  end
+
+  def idea_nodes
+    @event = BookEvent.find(params[:id])
+    @nodes = @event.idea_nodes
+
+    if @event
+      respond_to do |format|
+        format.json { render :json => @nodes }
+      end
+    end
   end
 
   private

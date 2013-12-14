@@ -32,4 +32,20 @@ describe BookEventsController do
   
   end
 
+  describe 'idea_nodes' do
+
+    let(:event) { FactoryGirl.create(:book_event) }
+
+    before :each do
+      BookEvent.any_instance.stub(:idea_nodes).and_return ['cats','dogs','hobbits']
+    end
+
+    it 'lists idea nodes' do
+
+      get :idea_nodes, :id => event.id , :format => :json
+
+      JSON.parse(response.body).should =~ ['cats','dogs','hobbits']
+    end
+  end
+
 end

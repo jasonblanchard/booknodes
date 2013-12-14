@@ -8,16 +8,10 @@
       <% @page_range.each do |i| %>
         pageOptions.push({id: <%= i %>, text: '<%= i %>'});
       <% end %>
-      
-      <% @node_list.each do |node| %>
-        nodeOptions.push('<%= node %>');
-      <% end %>
 
       select2SingleSelect(pageOptions); 
-      select2TagSelect(nodeOptions);
     });
 
-    <% #TODO: DRY this up with a function %>
     $(document).on('page:load', function() {
       var pageOptions = [];
       var nodeOptions = [];
@@ -26,12 +20,7 @@
         pageOptions.push({id: <%= i %>, text: '<%= i %>'});
       <% end %>
       
-      <% @node_list.each do |node| %>
-        nodeOptions.push('<%= node %>');
-      <% end %>
-
       select2SingleSelect(pageOptions); 
-      select2TagSelect(nodeOptions);
     });
 
   </script>
@@ -46,7 +35,7 @@
   <%= link_to @event.title, book_event_path(@event) %>
 <% end %>
 
-<div class='event-actions'>
+<div class='event-actions' data-event='<%=@event.id %>'>
   <% if can? :update, @event %>
     <%= link_to '+', '#', :class => 'new-plus new-idea btn' %>
   <% end %>
