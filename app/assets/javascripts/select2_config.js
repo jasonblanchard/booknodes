@@ -31,10 +31,17 @@ function select2TagSelect() {
     $('.select2-tag-select').select2('destroy');
 
     $('.select2-tag-select').select2({
-      tags: true,
-      data: options,
+      tags: options,
       width: '100%',
       tokenSeparators: [","]
     })
   });
 }
+
+$(document).ready(function() {
+  select2TagSelect();
+});
+
+$(document).on('page:load', function() {
+  select2TagSelect();
+});
