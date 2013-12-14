@@ -35,7 +35,7 @@
   <%= link_to @event.title, book_event_path(@event) %>
 <% end %>
 
-<div class='event-actions'>
+<div class='event-actions' data-event='<%=@event.id %>'>
   <% if can? :update, @event %>
     <%= link_to '+', '#', :class => 'new-plus new-idea btn' %>
   <% end %>

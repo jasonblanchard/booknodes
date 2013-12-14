@@ -20,7 +20,9 @@ function select2SingleSelect(dataOptions) {
 
 function select2TagSelect() {
 
-  var request = $.get('/book_events/523782381e73b5a6ab000002/idea_nodes.json', function(response) {
+  var eventId = $('.event-actions').data('event');
+
+  var request = $.get('/book_events/' + eventId + '/idea_nodes.json', function(response) {
     var options = [];
 
     $(response).each(function(index, value) {
