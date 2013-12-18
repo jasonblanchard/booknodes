@@ -8,7 +8,6 @@ script: bundle exec rspec spec
 deploy:
   provider: heroku
   app: booknodes
+  run: "heroku labs:enable user-env-compile"
   api_key:
     secure: C6aZnET24dCa8w0xVgHKNlgrQ1bPBOWJrxpc8siawCQg+2ynBmYmrw2CBwd9Fo5krzkLKvchCAcxkTnW7p7xonnRdxZhMO2giHPE2Qsb9jJxmIg9yW2Z9akq3Seg2AqzC4yhNGqkkAaZFZkMBu9nCTnTwtaVxNrp7iDTtctd1nQ=
-  on:
-    condition: 'heroku labs:enable user-env-compile'
