@@ -14,18 +14,26 @@ describe Ideaable do
   
   describe '#last_idea_page_number' do
 
-    it 'returns the last page number when last idea has a page number' do
-      event.ideas.last.page = 12
+    context 'when last idea has a page number' do
+      it 'returns the last page number' do
+        event.ideas.last.page = 12
 
-      event.last_idea_page_number.should eq 12
+        event.last_idea_page_number.should eq 12
+      end
     end
 
-    it 'returns something else if the last idea does not have a page number' do
-      event.last_idea_page_number.should eq nil
+    context 'when the last idea does not have page number' do
+      it 'returns the page number of the last idea with a page number' do
+        event.ideas.first.page = 12
+        event.last_idea_page_number.should eq 12
+      end
     end
+
+    context 'when the book event does not have any ideas' do
     
-    it 'returns nil if book event has no ideas' do
-      new_event.last_idea_page_number.should eq nil
+      it 'returns nil' do
+        new_event.last_idea_page_number.should eq nil
+      end
     end
 
   end

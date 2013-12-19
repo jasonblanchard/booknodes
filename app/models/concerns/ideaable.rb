@@ -12,9 +12,8 @@ module Ideaable
 
   
   def last_idea_page_number
-    # TODO: Refactor this to grab the last idea with a page number
-    if ideas.last
-      ideas.last.page.nil? ? nil : ideas.last.page
+    if idea = ideas.where(:page => {'$ne' => nil}).recent.first
+      idea.page
     else
       nil
     end
