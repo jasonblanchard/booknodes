@@ -37,20 +37,6 @@ body {
   z-index: -999
 }
 
-.top-bar {
-  border-bottom: 1px solid #aaaaaa;
-
-  li.toggle-topbar.menu-icon {
-    a {
-      border-bottom: 0px;
-    }
-  }
-}
-
-.top-bar-section li a:not(.button) {
-  line-height: 44px;
-}
-
 .topbar {
   min-height: 40px;
   border-bottom: 1px solid $main-boarder;
@@ -157,7 +143,5 @@ img.loader {
 
 @import 'home';
 @import 'sidebar';
-@import 'buttons';
-@import 'alerts';
 @import 'utilities';
 @import 'mobile';

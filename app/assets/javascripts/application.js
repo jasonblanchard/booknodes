@@ -14,23 +14,10 @@
 //= require jquery.ui.effect.all
 //= require jquery_ujs
 //= require jquery.remotipart
-//= require foundation
 //= require turbolinks
 //= require rails-timeago
 //= require select2
 //= require_tree .
-
-var ready = function() {
-  $(document).foundation();
-}
-
-$(ready);
-
-// Hack-around to get Foundation to re-bind topbar stuff
-$(document).on('page:load', function() {
-  $(document).foundation('off');
-  ready();
-});
 
 $(document).on('page:fetch', function() {
   $('.content').fadeOut(50);
