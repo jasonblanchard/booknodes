@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require jquery.remotipart
 //= require turbolinks
+//= require bootstrap
 //= require rails-timeago
 //= require select2
 //= require_tree .

@@ -32,7 +32,7 @@
 <% end %>
 
 <% content_for :header_title do %>
-  <%= link_to @event.title, book_event_path(@event) %>
+  <%= link_to @event.title, book_event_path(@event), :class => 'navbar-brand' %>
 <% end %>
 
 <div class='event-actions' data-event='<%=@event.id %>'>
