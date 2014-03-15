@@ -3,7 +3,7 @@
   <br />
   <br />
   <div class='clearfix'></div>
-  <ul>
+  <ul class='list-unstyled'>
     <li class='idea-node'><%= link_to 'All', book_event_path(@event) %></li>
     <% @idea_list.each do |idea,number| %>
       <li class='idea-node'><%= link_to raw("#{idea} <span class='info'>(#{number})</span>"), idea_filter_book_event_path(@event, url_encode(idea))  %></li>

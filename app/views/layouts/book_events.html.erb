@@ -1,17 +1,20 @@
 <% content_for :main_content do %>
+  <div class='row'>
+    
+    <div class="col-md-2">
+      <div class='sidebar'>
+        <%= yield :sidebar %>
+      </div>
+    </div>
 
-  <div class='sidebar'>
-    <%= yield :sidebar %>
-  </div>
 
-  <div class='mobile sidebar'>
-    <%= yield :mobile_sidebar %>
-  </div>
+    <div class="col-md-10">
+      <div class='content'>
+        <%= yield %>
+      </div>
+    </div>
 
-  <div class='content'>
-
-    <%= yield %>
-  </div>
-<% end %>
+  <% end %>
+</div>
 <%= render template: "layouts/application" %>
 

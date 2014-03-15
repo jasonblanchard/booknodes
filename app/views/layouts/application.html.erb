@@ -72,12 +72,12 @@
 
     <% if content_for?(:main_content) %>
 
-      <div class='main'>
+      <div class='main container-fluid'>
         <%= yield(:main_content) %>
       </div>
 
     <% else %>
-      <div class='main row'>
+      <div class='main container-fluid'>
         <%= yield %>
       </div>
     <% end %>

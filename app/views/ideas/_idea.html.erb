@@ -1,41 +1,41 @@
-<%= div_for(idea, 'data-event' => idea.book_event.id, 'data-idea' => idea.id, :class => (can?(:update, idea) ? 'editable' : '')) do |i| %>
-  <span class='idea-content show'>
+<%= div_for(idea, 'data-event' => idea.book_event.id, 'data-idea' => idea.id, :class => "clearfix #{(can?(:update, idea) ? 'editable' : '')}") do |i| %>
+  <div class='idea-content'>
     <div class='row'>
-      <div class='large-4 small-8 large-offset-8 small-offset-4 columns metadata text-align-right'>
+      <div class='col-md-4 col-md-offset-8 metadata text-align-right'>
         <%= timeago_tag idea.created_at, :nojs => true %>
       </div>
     </div>
 
     <div class='row'>
-      <div class='large-10 small-10 columns'>
+      <div class='col-md-11'>
         <p><%= simple_format i.note %></p>
       </div>
-      <div class='large-1 small-1 columns idea-actions'>
+      <div class='col-md-1 idea-actions'>
         <% if can? :update, idea %>
-          <button class='edit-button'>...</button>
+          <button class='btn btn-default edit-button'>...</button>
         <% end %>
       </div>
     </div>
 
     <div class='row'>
-      <div class='large-12 columns'>
+      <div class='col-md-12'>
         <%= image_tag i.image.url(:medium) unless i.image_file_name.nil? %>
       </div>
     </div>
 
     <div class='row'>
 
-      <div class='large-6 small-6 columns'>
+      <div class='col-md-6'>
         <div class='node-list info'>
           <p><%= i.list_nodes %></p>
         </div>
       </div>
 
-      <div class='large-6 small-6 columns'>
+      <div class='col-md-6'>
         <div class='page-number info'><%= "p. #{idea.page}" if idea.page %></div>
       </div>
 
     </div>
 
-  </span>
+  </div>
 <% end %>
