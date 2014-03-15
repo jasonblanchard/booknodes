@@ -1,13 +1,13 @@
 <% content_for :main_content do %>
   <div class='row'>
     
-    <div class="col-md-2">
+    <div class="col-md-2 sidebar-wrapper">
       <div class='sidebar'>
         <%= yield :sidebar %>
       </div>
     </div>
 
-    <div class="col-xs-4 mobile sidebar">
+    <div class="col-xs-4 mobile sidebar sidebar-wrapper">
       <div class='mobile sidebar'>
         <%= yield :mobile_sidebar %>
       </div>
