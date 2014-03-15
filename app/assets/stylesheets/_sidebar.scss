@@ -8,7 +8,7 @@ $hover-link-color: #66669c;
 .sidebar {
   background: $sidebar-background;
   //position: fixed;
-  overflow-y: scroll;
+  //overflow-y: scroll;
 }
 
 .ideas, .sidebar {
@@ -18,7 +18,7 @@ $hover-link-color: #66669c;
 .idea-list {
 
   ul {
-    position: fixed;
+    //position: fixed;
   }
 
   .idea-node {

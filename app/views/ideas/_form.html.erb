@@ -1,28 +1,36 @@
-<%= form_for([@event, idea], :remote => true, :html => { :multipart => true }) do |f| %>
-  <div class='col-md-12'>
-    <%= f.text_area :note, :placeholder => 'Note' %>
+<%= form_for([@event, idea], :remote => true, :html => { :multipart => true }, :html => {:role => 'form'}) do |f| %>
+  
+  <div class='form-group'>
+    <%= f.text_area :note, :placeholder => 'Note', :class => 'form-control' %>
+  </div>
+  
+  <div class='form-group'>
     <%= f.hidden_field :nodes, :value => idea.list_nodes, :placeholder => 'Idea nodes', :class => 'select2-tag-select' %>
-    <br />
-    <br />
-    <% if f.object.new_record? %>
-      <%= f.hidden_field :page, :class => 'select2-single-select' %>
-      <br />
-      <br />
-    <% else %>
-      <%= f.text_field :page, :placeholder => 'Page number' %>
-    <% end %>
-    <%= f.label :image, f.object.new_record? ? "Upload a page image" : "Replace page image" %>
-    <%= image_tag idea.image.url(:thumb), :class => 'thumbnail' unless idea.image_file_name.nil? %>
-    <br />
-    <%= f.file_field :image %>
-    <div class='actions'>
-      <%= f.submit :class => 'btn btn-default' %>
+  </div>
 
-      <% if idea.persisted? %>
-        <a href='#' class='btn btn-default cancel-idea-update-form'>Cancel</a>
-        <%= link_to "Delete", book_event_idea_path(@event, idea), :method => :delete, :remote => true, :class => "link-warning", :data => { :confirm => "Are you sure?" } %>
-      <% end %>
+  <% if f.object.new_record? %>
+    <%= f.hidden_field :page, :class => 'select2-single-select' %>
+    <br />
+    <br />
+  <% else %>
+    <div class='form-group col-xs-1'>
+      <%= f.text_field :page, :placeholder => 'Page number', :class => 'form-control' %>
     </div>
+  <% end %>
+
+  <div class='form-group col-md-12'>
+    <%= f.label :image, f.object.new_record? ? "Upload a page image" : "Replace page image", :class => 'control-label' %>
+    <%= image_tag idea.image.url(:thumb), :class => 'thumbnail' unless idea.image_file_name.nil? %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class='actions form-group col-md-12'>
+    <%= f.submit :class => 'btn btn-default' %>
+
+    <% if idea.persisted? %>
+      <a href='#' class='btn btn-default cancel-idea-update-form'>Cancel</a>
+      <%= link_to "Delete", book_event_idea_path(@event, idea), :method => :delete, :remote => true, :class => "link-warning", :data => { :confirm => "Are you sure?" } %>
+    <% end %>
   </div>
 
 <% end %>
