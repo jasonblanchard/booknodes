@@ -70,17 +70,20 @@
       </div>
     <% end %>
 
-    <% if content_for?(:main_content) %>
+    <div class='wrap'>
+      <% if content_for?(:main_content) %>
 
-      <div class='main container-fluid'>
-        <%= yield(:main_content) %>
-      </div>
+        <div class='main container-fluid'>
+          <%= yield(:main_content) %>
+        </div>
 
-    <% else %>
-      <div class='main container-fluid'>
-        <%= yield %>
-      </div>
-    <% end %>
+      <% else %>
+        <div class='main container-fluid'>
+          <%= yield %>
+        </div>
+      <% end %>
+    </div>
+
 
     <%= yield :page_scripts %>
 

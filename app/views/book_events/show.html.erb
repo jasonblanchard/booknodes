@@ -65,7 +65,7 @@
     <%= render :partial => "ideas/idea", :locals => { idea: idea } %>
   <% end %>
   <div class='row'>
-    <div class='large-4 large-offset-8 columns text-align-right'>
+    <div class='col-md-12 text-align-right'>
       <%= paginate @ideas.page %>
     </div>
   </div>
