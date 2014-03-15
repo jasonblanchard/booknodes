@@ -7,25 +7,13 @@
   z-index: 999;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .sidebar {
     display: none;
   }
 
   .btn.expand-sidebar-button {
     display: inline-block;
-  }
-
-  .event-title {
-    margin-top: 6px;
-  }
-
-  .content {
-    margin-left: 0px !important;
-  }
-
-  .content.slide {
-    margin-left: 240px !important;
   }
 
   .expand-sidebar-button {

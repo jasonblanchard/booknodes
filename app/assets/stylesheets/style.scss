@@ -14,10 +14,18 @@ html, body, .main, .full-height {
   font-size: 16px;
 }
 
+.main {
+  margin-top: 50px;
+}
+
 body {
   background: $main-background;
   color: $text-color;
   font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+  background: white;
 }
 
 .event-title {
@@ -97,7 +105,6 @@ body {
 
 .new-idea {
   margin-top: 10px;
-  padding-right: 5px;
 }
 
 .new-idea-form {
@@ -129,6 +136,14 @@ body {
 img.loader {
   display: block;
   margin: 0 auto;
+}
+
+.processing {
+  position: absolute;
+  display: none;
+  left: 50%;
+  top: 10px;
+  z-index: 9999;
 }
 
 @import 'home';

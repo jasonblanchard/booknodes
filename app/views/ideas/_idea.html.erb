@@ -7,10 +7,10 @@
     </div>
 
     <div class='row'>
-      <div class='col-md-11'>
+      <div class='col-md-11 col-xs-10'>
         <p><%= simple_format i.note %></p>
       </div>
-      <div class='col-md-1 idea-actions'>
+      <div class='col-md-1 col-xs-2 idea-actions'>
         <% if can? :update, idea %>
           <button class='btn btn-default edit-button'>...</button>
         <% end %>
