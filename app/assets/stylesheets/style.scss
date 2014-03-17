@@ -9,11 +9,31 @@ $small-text-size: .9em;
 $extra-small-font: .85em;
 $extra-light-text: #AFA298;
 
+html, body {
+  height: 100%;
+}
+
+body {
+  display: table;
+  width: 100%;
+}
+
 html, body, .main, .full-height {
   font-size: 16px;
 }
 
-.main {
+.no-padding {
+  padding: 0px;
+}
+
+.wrap {
+  height: 100%;
+  min-height: 100%;
+}
+
+.main-content {
+  height: 100%;
+  min-height: 100%;
   margin-top: 50px;
   margin-left: 10px;
   margin-right: 10px;

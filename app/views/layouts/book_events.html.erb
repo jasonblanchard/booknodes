@@ -1,19 +1,19 @@
 <% content_for :main_content do %>
   <div class='row'>
     
-    <div class="col-md-2 sidebar-wrapper">
+    <div class="col-md-2 sidebar-wrapper no-padding">
       <div class='sidebar'>
         <%= yield :sidebar %>
       </div>
     </div>
 
-    <div class="col-xs-4 mobile sidebar sidebar-wrapper">
+    <div class="col-md-2 mobile sidebar sidebar-wrapper no-padding">
       <div class='mobile sidebar'>
         <%= yield :mobile_sidebar %>
       </div>
     </div>
 
-    <div class="col-md-10">
+    <div class="col-md-10 no-padding">
       <div class='content'>
         <%= yield %>
       </div>
