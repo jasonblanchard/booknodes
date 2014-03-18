@@ -27,6 +27,8 @@ html, body, .main, .full-height {
 }
 
 .ideas-row {
+  //TODO: Make this the width of the div
+  //Wants to be -15px
   margin-left: -10px;
   margin-right: -10px;
 }
@@ -43,6 +45,8 @@ html, body, .main, .full-height {
   margin-left: 10px;
   margin-right: 10px;
   box-shadow: 0px 10px 10px #888;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 body {
