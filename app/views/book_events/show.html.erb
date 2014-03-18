@@ -36,10 +36,12 @@
 <% end %>
 
 <div class='event-actions' data-event='<%=@event.id %>'>
-  <% if can? :update, @event %>
-    <%= link_to '+', '#', :class => 'btn btn-default new-plus new-idea btn' %>
-  <% end %>
-  <a href='#' class='expand-sidebar-button btn btn-default'>>></a>
+  <div class='col-md-12'>
+    <% if can? :update, @event %>
+      <%= link_to '+', '#', :class => 'btn btn-default new-plus new-idea btn' %>
+    <% end %>
+    <a href='#' class='expand-sidebar-button btn btn-default'>>></a>
+  </div>
 </div>
 
 <% content_for :header_links do %>

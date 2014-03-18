@@ -1,5 +1,5 @@
 <%= div_for(idea, 'data-event' => idea.book_event.id, 'data-idea' => idea.id, :class => "clearfix #{(can?(:update, idea) ? 'editable' : '')}") do |i| %>
-  <div class='idea-content'>
+  <div class='idea-content col-md-12'>
     <div class='row'>
       <div class='col-md-4 col-md-offset-8 metadata text-align-right'>
         <%= timeago_tag idea.created_at, :nojs => true %>
