@@ -29,8 +29,8 @@ html, body, .main, .full-height {
 .ideas-row {
   //TODO: Make this the width of the div
   //Wants to be -15px
-  margin-left: -10px;
-  margin-right: -10px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .wrap {
@@ -45,8 +45,8 @@ html, body, .main, .full-height {
   margin-left: 10px;
   margin-right: 10px;
   box-shadow: 0px 10px 10px #888;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 body {
@@ -98,6 +98,8 @@ img {
 .idea {
   padding: 5px;
   border-bottom: 1px solid $lighter-border;
+  margin-left: -15px;
+  margin-right: -15px;
 
   &:hover {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
