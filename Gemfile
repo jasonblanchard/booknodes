@@ -76,3 +76,4 @@ gem "cancan"
 'Pagination'
 gem 'kaminari'
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'nprogress-rails'

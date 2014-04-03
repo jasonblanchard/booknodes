@@ -17,12 +17,17 @@
 //= require turbolinks
 //= require bootstrap
 //= require rails-timeago
+//= require nprogress
+//= require nprogress-turbolinks
 //= require select2
 //= require_tree .
 
+NProgress.configure({
+  showSpinner: false
+});
+
 $(document).on('page:fetch', function() {
   $('.content').fadeOut(50);
-  $('.processing').show();
 });
 
 $(document).on('page:change', function() {
@@ -31,5 +36,4 @@ $(document).on('page:change', function() {
 
 $(document).on('page:restore', function() {
   $('.content').fadeIn(50);
-  $('.processing').hide();
 });

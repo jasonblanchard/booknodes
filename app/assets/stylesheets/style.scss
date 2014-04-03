@@ -176,14 +176,6 @@ img.loader {
   margin: 0 auto;
 }
 
-.processing {
-  position: absolute;
-  display: none;
-  left: 50%;
-  top: 10px;
-  z-index: 9999;
-}
-
 @import 'home';
 @import 'sidebar';
 @import 'utilities';
