@@ -22,7 +22,7 @@ $(document).on('dblclick', '.idea.editable', function() {
   } else {
     $.get('/book_events/' + $(this).data('event') + '/ideas/' + $(this).data('idea') + '/edit', function() {
       // TODO: Pull in the tags by ajax
-      select2TagSelect(); 
+      booknodes.select2.select2TagSelect(); 
     });
   }
 });
@@ -34,7 +34,7 @@ $(document).on('click', '.edit-button', function() {
     $(idea).addClass('editing');
   } else {
     $.get('/book_events/' + $(idea).data('event') + '/ideas/' + $(idea).data('idea') + '/edit', function() {
-      select2TagSelect();
+      booknodes.select2.select2TagSelect();
     });
   }
   return false;
