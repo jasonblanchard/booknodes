@@ -24,22 +24,24 @@ booknodes.select2 = {
 
     var eventId = $('.event-actions').data('event');
 
-    var request = $.get('/book_events/' + eventId + '/idea_nodes.json', function(response) {
-      var options = [];
+    if ( eventId !== null ) {
+      var request = $.get('/book_events/' + eventId + '/idea_nodes.json', function(response) {
+        var options = [];
 
-      $(response).each(function(index, value) {
-        options.push({id: value, text: value});
+        $(response).each(function(index, value) {
+          options.push({id: value, text: value});
+        });
+
+        $('.new_idea .select2-tag-select').select2('data','');
+        $('.select2-tag-select').select2('destroy');
+
+        $('.select2-tag-select').select2({
+          tags: options,
+          width: '100%',
+          tokenSeparators: [","]
+        })
       });
-
-      $('.new_idea .select2-tag-select').select2('data','');
-      $('.select2-tag-select').select2('destroy');
-
-      $('.select2-tag-select').select2({
-        tags: options,
-        width: '100%',
-        tokenSeparators: [","]
-      })
-    });
+    }
   }
 
 };
