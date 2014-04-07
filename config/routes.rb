@@ -8,6 +8,7 @@ Booknotes::Application.routes.draw do
 
   resources :book_events do
     resources :ideas
+    resources :breakdowns
     member do
       get 'idea_nodes'
     end
