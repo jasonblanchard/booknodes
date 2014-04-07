@@ -4,6 +4,10 @@ class BreakdownsController < ApplicationController
 
   def index
     @breakdowns = @event.breakdowns
+
+    respond_to do |format|
+      format.json { render :json => @breakdowns }
+    end
   end
 
   private
@@ -13,7 +17,7 @@ class BreakdownsController < ApplicationController
   end
 
   def book_event_params
-    params.require(:breakdown).permit(:nodes)
+    params.require(:breakdown).permit(:nodes, :note)
   end
 
 end
