@@ -79,3 +79,4 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'nprogress-rails'
 
 gem "active_model_serializers"
+gem "rails-backbone"

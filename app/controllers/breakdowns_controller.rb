@@ -7,6 +7,7 @@ class BreakdownsController < ApplicationController
 
     respond_to do |format|
       format.json { render :json => @breakdowns }
+      format.html
     end
   end
 
