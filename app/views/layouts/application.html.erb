@@ -67,17 +67,15 @@
     <% end %>
 
     <div class='wrap'>
-      <% if content_for?(:main_content) %>
 
-        <div class='main-content container-fluid'>
+      <div class='main-content container-fluid' data-page='<%= body_data_page %>'>
+        <% if content_for?(:main_content) %>
           <%= yield(:main_content) %>
-        </div>
-
-      <% else %>
-        <div class='main-content container-fluid'>
+        <% else %>
           <%= yield %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+
     </div>
 
 
