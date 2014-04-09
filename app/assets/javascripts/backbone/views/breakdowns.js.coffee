@@ -1,5 +1,5 @@
 class Booknodes.Views.Breakown extends Backbone.View
-  className: 'breakdown'
+  className: 'breakdown col-md-4'
 
   template: JST['backbone/templates/breakdown']
 
@@ -10,9 +10,12 @@ class Booknodes.Views.Breakown extends Backbone.View
 
 class Booknodes.Views.Breakdowns extends Backbone.View
 
+  template: JST['backbone/templates/breakdowns']
+
   initialize: ->
     @.collection.on('add', @.addOne, @)
     @.collection.on('reset', @.addAll, @)
+    @.items = []
 
   render: ->
     @.addAll()
@@ -21,8 +24,12 @@ class Booknodes.Views.Breakdowns extends Backbone.View
   addAll: ->
     @.$el.empty()
     @.collection.forEach(@.addOne, @)
+    #console.log(@.items)
+    #@.$el.html(@.template({items: @.items}))
 
   
   addOne: (model) ->
+    console.log(model)
     breakdownView = new Booknodes.Views.Breakown({model: model})
     @.$el.append(breakdownView.render().el)
+    #@.items.push(breakdownView.render().$el)
