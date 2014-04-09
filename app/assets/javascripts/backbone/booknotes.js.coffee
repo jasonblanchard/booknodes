@@ -9,3 +9,10 @@ window.Booknodes =
   Collections: {}
   Routers: {}
   Views: {}
+
+  initialize: (eventId) ->
+    @breakdowns = new Booknodes.Collections.BreakdownsCollection([],{eventId: eventId})
+    @breakdowns.fetch()
+    @breakdownsView = new Booknodes.Views.Breakdowns({collection: @breakdowns})
+    @breakdownsView.render()
+    $('#app').append(@breakdownsView.el)
