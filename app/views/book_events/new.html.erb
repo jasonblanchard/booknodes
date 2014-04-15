@@ -1,10 +1,12 @@
-<div class='large-12 columns'>
+<div class='col-md-6'>
   <h2>New Book</h2>
 
   <%= form_for(@event) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.submit %>
+    <div class='form-group'>
+      <%= f.label :title %>
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+    <%= f.submit :class => 'btn btn-default' %>
   <% end %>
 
 
