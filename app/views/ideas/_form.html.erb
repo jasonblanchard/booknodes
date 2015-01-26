@@ -3,6 +3,7 @@
   <div class='form-group col-md-12'>
     <%= f.text_area :note, :placeholder => 'Note', :class => 'form-control' %>
   </div>
+  <span class="sub">Use a #hashtag or #{hash with curly brackets} to add nodes in the note body</sub>
   
   <div class='form-group col-md-12'>
     <%= f.hidden_field :nodes, :value => idea.list_nodes, :placeholder => 'Idea nodes', :class => 'select2-tag-select' %>

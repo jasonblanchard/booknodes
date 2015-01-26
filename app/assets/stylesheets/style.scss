@@ -179,6 +179,11 @@ img.loader {
   margin: 0 auto;
 }
 
+.sub {
+  font-size: $extra-small-font;
+  color: $extra-light-text
+}
+
 @import 'home';
 @import 'sidebar';
 @import 'utilities';
